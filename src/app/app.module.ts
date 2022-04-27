@@ -45,7 +45,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     InsurancesComponent,
     SettingsComponent,
     UserInfoComponent,
-    AccountLayoutComponent
+    AccountLayoutComponent,
   ],
     imports: [
         BrowserModule,

@@ -1,1 +1,82 @@
-<p>create-insurance-ci works!</p>
+<mat-card>
+  <mat-card-title>
+    create-insurance-ci works!
+  </mat-card-title>
+
+  <mat-card-content>
+    <form [formGroup]="carInfoForm" (ngSubmit)="onNext()">
+      <div class="row">
+        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+          <mat-label>Registration Number</mat-label>
+          <input type="text" matInput placeholder="Registration Nr" formControlName="registrationNr">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+          <mat-label>Category</mat-label>
+          <input type="text" matInput placeholder="Category" formControlName="category">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
+          <mat-label>Make</mat-label>
+          <input type="text" matInput placeholder="Make" formControlName="make">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
+          <mat-label>Model</mat-label>
+          <input type="text" matInput placeholder="Model" formControlName="model">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
+          <mat-label>Fuel Type</mat-label>
+          <input type="text" matInput placeholder="Fuel Type" formControlName="fuelType">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
+          <mat-label>Chassis Series</mat-label>
+          <input type="text" matInput placeholder="Chassis Series" formControlName="chassisSeries">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
+          <mat-label>CIV Series</mat-label>
+          <input type="text" matInput placeholder="CIV Series" formControlName="CIVSeries">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
+          <mat-label>Year of Manufacture</mat-label>
+          <input type="text" matInput placeholder="Year of Manufacture" formControlName="yearOfManufacture">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
+          <mat-label>Cylindrical Capacity</mat-label>
+          <input type="text" matInput placeholder="Cylindrical Capacity" formControlName="cylindricalCapacity">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
+          <mat-label>Maximal Net Power</mat-label>
+          <input type="text" matInput placeholder="Maximal Net Power" formControlName="maxNetPower">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
+          <mat-label>Maximal Total Mass</mat-label>
+          <input type="text" matInput placeholder="Maximal Total Mass" formControlName="maxTotalMass">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
+          <mat-label>Seats Nr</mat-label>
+          <input type="text" matInput placeholder="Seats Nr" formControlName="seatsNr">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <button mat-raised-button type="submit" color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;">next
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
