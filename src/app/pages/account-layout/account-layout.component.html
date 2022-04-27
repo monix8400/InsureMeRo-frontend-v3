@@ -1,1 +1,15 @@
-<p>account-layout works!</p>
+<mat-sidenav-container class="sidenav">
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <ng-template ngFor let-item [ngForOf]="menu" let-i="index">
+        <a routerLink="{{item.routerLink}}">
+          <mat-list-item>{{item.label}}</mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+      </ng-template>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

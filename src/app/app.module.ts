@@ -26,6 +26,9 @@ import { InsurancesComponent } from './components/insurances/insurances.componen
 import { SettingsComponent } from './components/settings/settings.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { AccountLayoutComponent } from './pages/account-layout/account-layout.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -56,6 +59,9 @@ import { AccountLayoutComponent } from './pages/account-layout/account-layout.co
         MatButtonModule,
         MatMenuModule,
         NgChartsModule,
+        MatSidenavModule,
+        MatListModule,
+        ReactiveFormsModule,
     ],
   providers: [HTTPRequestService],
   bootstrap: [AppComponent]

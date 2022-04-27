@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'account-layout',
@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountLayoutComponent implements OnInit {
 
-  constructor() { }
+  menu = [
+    {label: 'User Information', routerLink: ['/profile']},
+    {label: 'Account Information', routerLink: ['account-info']},
+    {label: 'Settings', routerLink: ['settings']}
+  ];
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

@@ -1,0 +1,14 @@
+.avatar{
+  border-radius: 100%;
+  border: double #fafafa;
+  margin-right: 1rem;
+  padding: 0 0.5rem;
+}
+.user{
+  display: flex;
+  align-items: center;
+}
+
+.mat-menu-item{
+    min-width: 180px;
+}

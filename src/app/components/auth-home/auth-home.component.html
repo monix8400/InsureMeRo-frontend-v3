@@ -1,4 +1,4 @@
-<div class="row flex align-items-center justify-content-center">
+<div class="row d-flex align-items-center justify-content-center">
   <div class="col-md-8 col-6">
     <mat-card>
       <mat-card-title>Chart</mat-card-title>
@@ -7,9 +7,8 @@
       </mat-card-content>
     </mat-card>
   </div>
-  <div class="col-md-4 col-6">
-    <button mat-button (click)="onClick()">
-      create
+  <div class="col-md-4 col-6 d-flex align-items-center justify-content-center">
+    <button mat-raised-button color="primary" (click)="onClick()" style="padding: 0.5rem 3rem; font-size: 1rem;">Create Insurance
     </button>
   </div>
 </div>
