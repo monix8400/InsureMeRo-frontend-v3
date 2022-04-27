@@ -1,0 +1,14 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <!--  <span>HOME</span> -->
+    <span><a href="/">HOME</a></span>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">{{getUserName()}}</button>
+    <mat-menu #menu="matMenu">
+      <ng-template ngFor let-item [ngForOf]="user_dropdown" let-i="index">
+        <button mat-menu-item (click)="onClick(item)">{{item.label}}</button>
+      </ng-template>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
