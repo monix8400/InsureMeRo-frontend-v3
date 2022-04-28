@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       (data)=>{localStorage.setItem("firstname", data.firstname);
         localStorage.setItem("lastname",data.lastname);
         localStorage.setItem("email", data.email);
-        this.router.navigate(['/home']).then(r => console.log(r));
+        this.router.navigate(['/auth-home']).then(r => console.log(r));
         console.log('Login succeeded!');},
       () => console.log('Login failed!')
     );
