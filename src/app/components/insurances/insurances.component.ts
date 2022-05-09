@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./insurances.component.css']
 })
 export class InsurancesComponent implements OnInit {
+  insurances: any;
 
   constructor() { }
 

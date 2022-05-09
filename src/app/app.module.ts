@@ -29,6 +29,7 @@ import { AccountLayoutComponent } from './pages/account-layout/account-layout.co
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import {ReactiveFormsModule} from "@angular/forms";
         MatSidenavModule,
         MatListModule,
         ReactiveFormsModule,
+        MatIconModule,
     ],
   providers: [HTTPRequestService],
   bootstrap: [AppComponent]
