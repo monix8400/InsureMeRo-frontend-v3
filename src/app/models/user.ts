@@ -1,15 +1,15 @@
-export class User{
-  firstname:string;
-  lastname:string;
-  email:string;
-  password:string;
-  loggedIn:boolean;
+export class User {
+  firstname: string;
+  lastname: string;
+  email: string;
+  password: string;
+  role: string;
 
-  constructor(firstname="", lastname="", email="", password="", loggedIn=false) {
+  constructor(firstname = "", lastname = "", email = "", password = "", role = "") {
     this.firstname = firstname;
     this.lastname = lastname;
     this.email = email;
     this.password = password;
-    this.loggedIn = loggedIn;
+    this.role = role;
   }
 }
