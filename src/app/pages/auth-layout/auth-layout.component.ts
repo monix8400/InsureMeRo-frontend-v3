@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../../services/authentication.service";
@@ -12,55 +12,50 @@ import {User} from "../../models/user";
 export class AuthLayoutComponent implements OnInit {
   user: User = new User();
 
-  user_dropdown=[
+  user_dropdown = [
     {label: 'Profile', routerLink: ['/profile']},
     {label: 'My Insurances', routerLink: ['/insurances']},
     {label: 'Logout', command: () => this.logout()}
   ];
 
 
-  constructor(private userService: UserService, private router: Router, private authenticationService: AuthenticationService) { }
-
-  ngOnInit(): void {
+  constructor(private userService: UserService, private router: Router, private authenticationService: AuthenticationService) {
   }
 
-  onClick(item:any){
-    if(item.command){
+  ngOnInit(): void {
+    this.getCurrentUser()
+  }
+
+  onClick(item: any) {
+    if (item.command) {
       item.command()
-    }
-    else{
+    } else {
       this.router.navigate(item.routerLink)
     }
   }
 
-  getUser() {
-    this.userService.getUsers().subscribe((data) => {
+  getCurrentUser() {
+    this.userService.getCurrentUser().subscribe((data) => {
       this.user = data;
     });
   }
 
-  getInitials(){
-    // @ts-ignore
-    return localStorage.getItem("firstname").charAt(0).toUpperCase() + localStorage.getItem("lastname").charAt(0).toUpperCase();
+  getInitials() {
+    return this.user.firstname.charAt(0).toUpperCase() + this.user.lastname.charAt(0).toUpperCase();
   }
 
   getUserName() {
-    return localStorage.getItem("firstname") + " " + localStorage.getItem("lastname");
+    return this.user.firstname + " " + this.user.lastname;
   }
 
   logout() {
-    let email = localStorage.getItem("email")
-    if (email != null)
-      this.authenticationService.logout(email).subscribe(
-        {
-          next: () => {
-            localStorage.removeItem('firstname');
-            localStorage.removeItem('lastname');
-            localStorage.removeItem('email');
-            this.router.navigate(['/login']).then(r => console.log(r))
-            console.log('Logout succeeded!')
-          },
-          error: () => console.log('Logout failed!')
-        })
+    this.authenticationService.logout(this.user.email).subscribe(
+      {
+        next: () => {
+          localStorage.clear();
+          this.router.navigate(['/login']).then(() => console.log('Logout succeeded!'))
+        },
+        error: () => console.log('Logout failed!')
+      })
   }
 }

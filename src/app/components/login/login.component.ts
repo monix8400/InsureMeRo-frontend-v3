@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../models/user";
 import {Router} from "@angular/router";
@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
     ]),
   });
 
-  constructor(private router: Router, private loginService: AuthenticationService) { }
+  constructor(private router: Router, private loginService: AuthenticationService) {
+  }
 
   ngOnInit(): void {
   }
@@ -34,14 +35,17 @@ export class LoginComponent implements OnInit {
   login(user: User) {
     console.log(this.loginForm);
     this.loginService.login(user.email, user.password).subscribe(
-      (data)=>{localStorage.setItem("firstname", data.firstname);
-        localStorage.setItem("lastname",data.lastname);
-        localStorage.setItem("email", data.email);
+      (data) => {
+        console.log(data)
+
+        localStorage.setItem("accessToken", data.accessToken)
         this.router.navigate(['/auth-home']).then(r => console.log(r));
-        console.log('Login succeeded!');},
+        console.log('Login succeeded!');
+      },
       () => console.log('Login failed!')
     );
   }
+
 
   isValid() {
     return (

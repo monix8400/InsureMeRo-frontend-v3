@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HTTPRequestService} from "./http-request.service";
 import {User} from "../models/user";
 
@@ -24,5 +24,9 @@ export class UserService {
 
   deleteUserById(id: number) {
     return this.httpRequestService.delete('user/deleteUserById/' + id).subscribe();
+  }
+
+  getCurrentUser() {
+    return this.httpRequestService.get('user/user', {headers: {'Authorization': 'Bearer ' + localStorage.getItem("accessToken")}});
   }
 }
