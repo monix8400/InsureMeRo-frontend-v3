@@ -3,12 +3,12 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'create-insurance-ci',
-  templateUrl: './create-insurance-ci.component.html',
-  styleUrls: ['./create-insurance-ci.component.css']
+  selector: 'create-insurance-v',
+  templateUrl: './create-insurance-v.component.html',
+  styleUrls: ['./create-insurance-v.component.css']
 })
-export class CreateInsuranceCIComponent implements OnInit {
-  carInfoForm= new FormGroup({
+export class CreateInsuranceVComponent implements OnInit {
+  vehicleForm= new FormGroup({
     registrationNr:  new FormControl(),
     category:  new FormControl(),
     make:  new FormControl(),
@@ -29,11 +29,11 @@ export class CreateInsuranceCIComponent implements OnInit {
   }
 
   onClick() {
-    this.router.navigateByUrl('create-insurance-ci');
+    this.router.navigateByUrl('create-insurance-choose-d');
   }
 
   onNext() {
-    console.log(this.carInfoForm.value)
+    console.log(this.vehicleForm.value)
     this.onClick()
   }
 }

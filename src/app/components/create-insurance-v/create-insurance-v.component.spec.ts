@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateInsuranceCIComponent } from './create-insurance-ci.component';
+import { CreateInsuranceCIComponent } from './create-insurance-v.component';
 
 describe('CreateInsuranceCIComponent', () => {
   let component: CreateInsuranceCIComponent;

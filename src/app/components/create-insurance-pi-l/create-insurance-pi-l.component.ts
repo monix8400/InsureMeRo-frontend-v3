@@ -1,22 +1,19 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
-import {PersonalInfo} from "../../models/personalInfo";
 import {Address} from "../../models/address";
+import {PersonalInfo} from "../../models/personalInfo";
+import {Router} from "@angular/router";
 import {PersonalInfoService} from "../../services/personal-info.service";
 
 @Component({
-  selector: 'create-insurance-pi',
-  templateUrl: './create-insurance-pi.component.html',
-  styleUrls: ['./create-insurance-pi.component.css']
+  selector: 'create-insurance-pi-l',
+  templateUrl: './create-insurance-pi-l.component.html',
+  styleUrls: ['./create-insurance-pi-l.component.css']
 })
-export class CreateInsurancePIComponent implements OnInit {
+export class CreateInsurancePiLComponent implements OnInit {
   personalInfoForm = new FormGroup({
-    firstname: new FormControl(),
-    lastname: new FormControl(),
-    idSeries: new FormControl(),
-    idNumber: new FormControl(),
-    cnpCode: new FormControl(),
+    name: new FormControl(),
+    identificationNr: new FormControl(),
     city: new FormControl(),
     county: new FormControl(),
     street: new FormControl(),
@@ -33,10 +30,8 @@ export class CreateInsurancePIComponent implements OnInit {
   }
 
   onClick() {
-    let name = this.personalInfoForm.controls['firstname'].value + ' ' + this.personalInfoForm.controls['lastname'].value;
-    let idSeries = this.personalInfoForm.controls['idSeries'].value;
-    let idNr = this.personalInfoForm.controls['idNumber'].value;
-    let code = this.personalInfoForm.controls['cnpCode'].value;
+    let name = this.personalInfoForm.controls['name'].value;
+    let code = this.personalInfoForm.controls['identificationNr'].value;
 
     let city = this.personalInfoForm.controls['city'].value;
     let county = this.personalInfoForm.controls['county'].value;
@@ -45,11 +40,11 @@ export class CreateInsurancePIComponent implements OnInit {
     let zip = this.personalInfoForm.controls['zip'].value
 
     this.address = new Address(county, city, street, number, zip)
-    this.personalInfo = new PersonalInfo("INDIVIDUAL", name, idSeries, idNr, code, this.address);
+    this.personalInfo = new PersonalInfo(" LEGAL_PERSON", name, "", "", code, this.address);
 
     console.log(this.personalInfo);
     this.personalInfoService.addPersonalInfo(this.personalInfo);
-    // this.router.navigateByUrl('create-insurance-ci').then(r => console.log(r));
+    this.router.navigateByUrl('create-insurance-v').then(r => console.log(r));
   }
 
   onNext() {

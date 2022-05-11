@@ -5,13 +5,21 @@ import {AuthLayoutComponent} from "./pages/auth-layout/auth-layout.component";
 import {LoginComponent} from "./components/login/login.component";
 import {RegisterComponent} from "./components/register/register.component";
 import {AuthHomeComponent} from "./components/auth-home/auth-home.component";
-import {CreateInsurancePIComponent} from "./components/create-insurance-pi/create-insurance-pi.component";
-import {CreateInsuranceCIComponent} from "./components/create-insurance-ci/create-insurance-ci.component";
+import {CreateInsurancePiIComponent} from "./components/create-insurance-pi-i/create-insurance-pi-i.component";
+import {CreateInsuranceVComponent} from "./components/create-insurance-v/create-insurance-v.component";
 import {AccountLayoutComponent} from "./pages/account-layout/account-layout.component";
 import {InsurancesComponent} from "./components/insurances/insurances.component";
 import {UserInfoComponent} from "./components/user-info/user-info.component";
 import {AccountInfoComponent} from "./components/account-info/account-info.component";
 import {SettingsComponent} from "./components/settings/settings.component";
+import {CreateInsurancePiLComponent} from "./components/create-insurance-pi-l/create-insurance-pi-l.component";
+import {
+  CreateInsuranceChooseTypePiComponent
+} from "./components/create-insurance-choose-type-pi/create-insurance-choose-type-pi.component";
+import {CreateInsuranceDComponent} from "./components/create-insurance-d/create-insurance-d.component";
+import {
+  CreateInsuranceChooseDComponent
+} from "./components/create-insurance-choose-d/create-insurance-choose-d.component";
 
 const routes: Routes = [
   {
@@ -46,13 +54,33 @@ const routes: Routes = [
           // canActivate: [AuthGuard]
         },
         {
-          path: 'create-insurance-pi',
-          component: CreateInsurancePIComponent,
+          path: 'create-insurance-choose-type-pi',
+          component: CreateInsuranceChooseTypePiComponent,
           // canActivate: [AuthGuard]
         },
         {
-          path: 'create-insurance-ci',
-          component: CreateInsuranceCIComponent,
+          path: 'create-insurance-pi-i',
+          component: CreateInsurancePiIComponent,
+          // canActivate: [AuthGuard]
+        },
+        {
+          path: 'create-insurance-pi-l',
+          component: CreateInsurancePiLComponent,
+          // canActivate: [AuthGuard]
+        },
+        {
+          path: 'create-insurance-v',
+          component: CreateInsuranceVComponent,
+          // canActivate: [AuthGuard]
+        },
+        {
+          path: 'create-insurance-choose-d',
+          component: CreateInsuranceChooseDComponent,
+          // canActivate: [AuthGuard]
+        },
+        {
+          path: 'create-insurance-d',
+          component: CreateInsuranceDComponent,
           // canActivate: [AuthGuard]
         },
         {
