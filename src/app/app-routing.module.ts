@@ -20,6 +20,7 @@ import {CreateInsuranceDComponent} from "./components/create-insurance-d/create-
 import {
   CreateInsuranceChooseDComponent
 } from "./components/create-insurance-choose-d/create-insurance-choose-d.component";
+import {AuthGuard} from "./services/auth.guard";
 
 const routes: Routes = [
   {
@@ -45,53 +46,45 @@ const routes: Routes = [
   {
     path: '',
     component: AuthLayoutComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children:
       [
         {
           path: 'auth-home',
           component: AuthHomeComponent,
-          // canActivate: [AuthGuard]
         },
         {
           path: 'create-insurance-choose-type-pi',
           component: CreateInsuranceChooseTypePiComponent,
-          // canActivate: [AuthGuard]
         },
         {
           path: 'create-insurance-pi-i',
           component: CreateInsurancePiIComponent,
-          // canActivate: [AuthGuard]
         },
         {
           path: 'create-insurance-pi-l',
           component: CreateInsurancePiLComponent,
-          // canActivate: [AuthGuard]
+
         },
         {
           path: 'create-insurance-v',
           component: CreateInsuranceVComponent,
-          // canActivate: [AuthGuard]
         },
         {
           path: 'create-insurance-choose-d',
           component: CreateInsuranceChooseDComponent,
-          // canActivate: [AuthGuard]
         },
         {
           path: 'create-insurance-d',
           component: CreateInsuranceDComponent,
-          // canActivate: [AuthGuard]
         },
         {
           path: 'insurances',
           component: InsurancesComponent,
-          // canActivate: [AuthGuard]
         },
         {
           path: 'profile',
           component: AccountLayoutComponent,
-          // canActivate: [AuthGuard],
           children:
             [
               {path: '', component: UserInfoComponent},

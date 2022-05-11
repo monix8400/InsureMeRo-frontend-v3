@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HTTPRequestService} from "./http-request.service";
-import {HttpHeaders, HttpParams} from "@angular/common/http";
+import {HttpHeaders} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +21,4 @@ export class AuthenticationService {
     return this.httpRequestService.post('login', result, null, undefined);
   }
 
-  logout(email: string) {
-    let params = new HttpParams();
-    params = params.append('email', email);
-
-
-    return this.httpRequestService.post('logout', params, null);
-  }
 }

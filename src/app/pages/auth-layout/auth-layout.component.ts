@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {Router} from "@angular/router";
-import {AuthenticationService} from "../../services/authentication.service";
 import {User} from "../../models/user";
 
 @Component({
@@ -19,7 +18,7 @@ export class AuthLayoutComponent implements OnInit {
   ];
 
 
-  constructor(private userService: UserService, private router: Router, private authenticationService: AuthenticationService) {
+  constructor(private userService: UserService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -49,13 +48,7 @@ export class AuthLayoutComponent implements OnInit {
   }
 
   logout() {
-    this.authenticationService.logout(this.user.email).subscribe(
-      {
-        next: () => {
-          localStorage.clear();
-          this.router.navigate(['/login']).then(() => console.log('Logout succeeded!'))
-        },
-        error: () => console.log('Logout failed!')
-      })
+    localStorage.clear();
+    this.router.navigate(['/login']).then(() => console.log('Logout succeeded!'))
   }
 }
