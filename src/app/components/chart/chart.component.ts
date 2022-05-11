@@ -42,7 +42,7 @@ export class ChartComponent {
   public lineChartOptions: any = {
     elements: {
       line: {
-        tension: 0.5
+        tension: 0
       }
     },
     plugins: {
