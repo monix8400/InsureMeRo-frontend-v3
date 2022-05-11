@@ -6,16 +6,10 @@ import {HttpHeaders, HttpParams} from "@angular/common/http";
   providedIn: 'root'
 })
 export class AuthenticationService {
+  headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem("accessToken")});
 
   constructor(private httpRequestService: HTTPRequestService) {
   }
-
-  // login(email: string, password: string) {
-  //   let params = new HttpParams();
-  //   params = params.append('email', email);
-  //   params = params.append('password', password);
-  //   return this.httpRequestService.post('login/', params);
-  // }
 
   login(email: string, password: string) {
     let map = new Map<string, string>()
@@ -24,18 +18,14 @@ export class AuthenticationService {
     const result = Object.fromEntries(map);
     console.log(result)
 
-    return this.httpRequestService.post('login', result);
+    return this.httpRequestService.post('login', result, null, undefined);
   }
 
   logout(email: string) {
     let params = new HttpParams();
     params = params.append('email', email);
 
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + localStorage.getItem("accessToken")
-    });
-    let options = {headers: headers};
-    return this.httpRequestService.post('logout', params, options);
+
+    return this.httpRequestService.post('logout', params, null);
   }
 }
