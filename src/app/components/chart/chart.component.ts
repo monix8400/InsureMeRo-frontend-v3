@@ -6,7 +6,7 @@ import {BaseChartDirective} from 'ng2-charts';
 @Component({
   selector: 'chart',
   templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css']
+  styleUrls: ['./chart.component.scss']
 })
 export class ChartComponent {
 

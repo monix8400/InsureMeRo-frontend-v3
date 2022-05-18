@@ -1,0 +1,44 @@
+@import "./src/variables";
+
+.row {
+  justify-content: center;
+}
+
+$cardBorderColor: #363636;
+
+.add-driver-card {
+  background-color: $Background;
+  border: 2px solid $cardBorderColor;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 175px;
+  margin: 10px;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .material-icons {
+    font-size: 30px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  &:hover, &.active {
+    border: 2px solid $Accent;
+  }
+}
+
+button{
+  margin: 2rem;
+}
+
+.add-driver{
+  margin: 2rem;
+}

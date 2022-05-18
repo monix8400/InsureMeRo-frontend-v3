@@ -1,0 +1,20 @@
+<div [formGroup]="driversForm">
+  <ng-container class="add-driver" #container formArrayName="drivers">
+  </ng-container>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-3 add-driver-card d-flex align-items-center justify-content-between"
+         (click)='addDriver()'>
+      <div class="icon">
+        <mat-icon>person_add</mat-icon>
+      </div>
+      <p>Add driver</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <button mat-raised-button matStepperNext type="submit" color="primary"
+              style="padding: 0.5rem 3rem; font-size: 1rem;" (click)="sendDrivers()">Next
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,19 +1,16 @@
-<mat-card>
-  <mat-card-title>
-    create-insurance-choose-type-pi works!
-  </mat-card-title>
-  <mat-card-content>
-    <div class="row">
-      <div class="col d-flex justify-content-evenly align-items-center">
-        <button mat-raised-button type="submit" color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;" (click)=onClickIndividual()>
-          Individual
-        </button>
-<!--      </div>-->
-<!--      <div class="col-6  d-flex justify-content-center">-->
-        <button mat-raised-button type="submit" color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;"  (click)=onClickLegalPerson()>
-          Legal Person
-        </button>
-      </div>
+<div class="row justify-content-center align-items-center">
+  <div #btnI class="col-12 col-md-3 person-type-card active" (click)='onClick("Individual")'>
+    <div class="icon">
+      <mat-icon>person</mat-icon>
     </div>
-  </mat-card-content>
-</mat-card>
+    <p>Individual</p>
+  </div>
+
+  <div #btnL class="col-12 col-md-3 person-type-card" (click)='onClick("LegalPerson")'>
+    <div class="icon">
+      <mat-icon>business</mat-icon>
+    </div>
+    <p>Legal Person</p>
+  </div>
+</div>
+

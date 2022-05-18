@@ -1,70 +1,67 @@
-<mat-card>
-  <mat-card-title>
-    create-insurance-pi-l works!
-  </mat-card-title>
+<form [formGroup]="personalInfoForm" (ngSubmit)="onNext()">
+  <div class="row">
+    <div class="col-12  d-flex justify-content-center">
+      <button mat-raised-button color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;">Use your info from
+        your Profile
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12  d-flex justify-content-center" style="margin: 1rem;">
+      <h1 style="margin: 0;">OR</h1>
+    </div>
+  </div>
 
-  <mat-card-content>
-    <form [formGroup]="personalInfoForm" (ngSubmit)="onNext()">
-      <div class="row">
-        <div class="col-12  d-flex justify-content-center">
-          <button mat-raised-button color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;">Use your info from
-            your Profile
-          </button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12  d-flex justify-content-center" style="margin: 1rem;">
-          <h1 style="margin: 0;">OR</h1>
-        </div>
-      </div>
+  <div class="row">
+    <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput placeholder="Name" formControlName="name" required>
+    </mat-form-field>
 
-      <div class="row">
-        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
-          <mat-label>Name</mat-label>
-          <input type="text" matInput placeholder="Name" formControlName="name">
-        </mat-form-field>
+    <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+      <mat-label>Identification Number</mat-label>
+      <input type="text" matInput width="200rem" placeholder="identificationNr" formControlName="identificationNr"
+             required>
+    </mat-form-field>
+  </div>
 
-        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
-          <mat-label>Identification Number</mat-label>
-          <input type="text" matInput width="200rem" placeholder="identificationNr" formControlName="identificationNr">
-        </mat-form-field>
-      </div>
+  <div formGroupName="address">
+    <div class="row">
+      <mat-form-field appearance="outline" color="accent" class=" col-12 col-md-3">
+        <mat-label>City</mat-label>
+        <input type="text" id="inputCity" matInput placeholder="City" formControlName="city" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
+        <mat-label>County</mat-label>
+        <input type="text" id="inputCounty" matInput placeholder="County" formControlName="county" required>
+      </mat-form-field>
+    </div>
 
-      <div class="row">
-        <mat-form-field appearance="outline" color="accent" class=" col-12 col-md-3">
-          <mat-label>City</mat-label>
-          <input type="text" id="inputCity" matInput placeholder="City" formControlName="city">
-        </mat-form-field>
-        <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
-          <mat-label>County</mat-label>
-          <input type="text" id="inputCounty" matInput placeholder="County" formControlName="county">
-        </mat-form-field>
-      </div>
+    <div class="row">
+      <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+        <mat-label>Street</mat-label>
+        <input type="text" id="inputStreet" matInput placeholder="Street" formControlName="street" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+        <mat-label>Number</mat-label>
+        <input type="text" id="inputNumber" matInput placeholder="Number" formControlName="number" required>
+      </mat-form-field>
+    </div>
 
-      <div class="row">
-        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
-          <mat-label>Street</mat-label>
-          <input type="text" id="inputStreet" matInput placeholder="Street" formControlName="street">
-        </mat-form-field>
-        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
-          <mat-label>Number</mat-label>
-          <input type="text" id="inputNumber" matInput placeholder="Number" formControlName="number">
-        </mat-form-field>
-      </div>
+    <div class="row">
+      <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+        <mat-label>ZIP Code</mat-label>
+        <input type="text" id="inputZIP" matInput placeholder="ZIP" formControlName="zip" required>
+      </mat-form-field>
+    </div>
+  </div>
 
-      <div class="row">
-        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
-          <mat-label>ZIP Code</mat-label>
-          <input type="text" id="inputZIP" matInput placeholder="ZIP" formControlName="zip">
-        </mat-form-field>
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <button mat-raised-button matStepperNext type="submit" color="primary"
+                style="padding: 0.5rem 3rem; font-size: 1rem;">next
+        </button>
       </div>
+    </div>
+</form>
 
-      <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-          <button mat-raised-button type="submit" color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;">next
-          </button>
-        </div>
-      </div>
-    </form>
-  </mat-card-content>
-</mat-card>

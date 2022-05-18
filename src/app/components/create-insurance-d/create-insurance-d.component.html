@@ -1,58 +1,35 @@
-<mat-card>
-  <mat-card-title>
-    create-insurance-d works!
-  </mat-card-title>
+<div #itemRef>
+  <div class="icon" (click)="deleteAddDriver()">
+    <mat-icon>clear</mat-icon>
+  </div>
+  <form [formGroup]="driverForm">
+    <div class="row">
+      <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+        <mat-label>Last Name</mat-label>
+        <input type="text" matInput placeholder="Last Name" formControlName="lastname" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput placeholder="First Name" formControlName="firstname" required>
+      </mat-form-field>
+    </div>
 
-  <mat-card-content>
-    <form [formGroup]="driverForm" (ngSubmit)="onNext()">
-      <div class="row">
-        <div class="col-12  d-flex justify-content-center">
-          <button mat-raised-button color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;">Use your info from
-            your Profile
-          </button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12  d-flex justify-content-center" style="margin: 1rem;">
-          <h1 style="margin: 0;">OR</h1>
-        </div>
-      </div>
+    <div class="row">
+      <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+        <mat-label>ID Series</mat-label>
+        <input type="text" matInput placeholder="ID Series" formControlName="idSeries" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+        <mat-label>ID Number</mat-label>
+        <input type="text" matInput placeholder="ID Number" formControlName="idNumber" required>
+      </mat-form-field>
+    </div>
 
-      <div class="row">
-        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
-          <mat-label>Last Name</mat-label>
-          <input type="text" matInput placeholder="Last Name" formControlName="lastname">
-        </mat-form-field>
-        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
-          <mat-label>First Name</mat-label>
-          <input type="text" matInput placeholder="First Name" formControlName="firstname">
-        </mat-form-field>
-      </div>
-
-      <div class="row">
-        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
-          <mat-label>ID Series</mat-label>
-          <input type="text" matInput placeholder="ID Series" formControlName="idSeries">
-        </mat-form-field>
-        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
-          <mat-label>ID Number</mat-label>
-          <input type="text" matInput placeholder="ID Number" formControlName="idNumber">
-        </mat-form-field>
-      </div>
-
-      <div class="row">
-        <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
-          <mat-label>CNP</mat-label>
-          <input type="text" matInput width="200rem" placeholder="CNP" formControlName="cnpCode">
-        </mat-form-field>
-      </div>
-
-      <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-          <button mat-raised-button type="submit" color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;">next
-          </button>
-        </div>
-      </div>
-    </form>
-  </mat-card-content>
-</mat-card>
+    <div class="row">
+      <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
+        <mat-label>CNP</mat-label>
+        <input type="text" matInput width="200rem" placeholder="CNP" formControlName="cnpCode" required>
+      </mat-form-field>
+    </div>
+  </form>
+</div>

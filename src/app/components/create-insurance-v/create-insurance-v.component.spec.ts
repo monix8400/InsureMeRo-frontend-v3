@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateInsuranceCIComponent } from './create-insurance-v.component';
+import { CreateInsuranceVComponent } from './create-insurance-v.component';
 
-describe('CreateInsuranceCIComponent', () => {
-  let component: CreateInsuranceCIComponent;
-  let fixture: ComponentFixture<CreateInsuranceCIComponent>;
+describe('CreateInsuranceVComponent', () => {
+  let component: CreateInsuranceVComponent;
+  let fixture: ComponentFixture<CreateInsuranceVComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateInsuranceCIComponent ]
+      declarations: [ CreateInsuranceVComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateInsuranceCIComponent);
+    fixture = TestBed.createComponent(CreateInsuranceVComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

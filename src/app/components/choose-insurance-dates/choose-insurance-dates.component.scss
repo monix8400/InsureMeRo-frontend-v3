@@ -1,0 +1,37 @@
+@import "./src/variables";
+
+.row {
+  margin: 2rem;
+  justify-content: center;
+}
+
+$cardBorderColor: #363636;
+
+.month-card {
+  background-color: $Background;
+  border: 2px solid $cardBorderColor;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 200px;
+  margin: 20px;
+
+  p {
+    text-align: center;
+    font-size: 26px;
+  }
+
+  &:hover, &.active {
+    border: 2px solid $Accent;
+  }
+}
+
+.start-date{
+  flex-direction: column;
+}
+
+.calendar-card{
+  min-width: 200px;
+  margin: 16px 0 0 0;
+  width: 50%;
+  background-color: $Background;
+}

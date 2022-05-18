@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'auth-home',
   templateUrl: './auth-home.component.html',
-  styleUrls: ['./auth-home.component.css']
+  styleUrls: ['./auth-home.component.scss']
 })
 export class AuthHomeComponent implements OnInit {
 
@@ -14,6 +14,6 @@ export class AuthHomeComponent implements OnInit {
   }
 
   onClick(){
-    this.router.navigateByUrl('create-insurance-choose-type-pi').then(r => console.log(r));
+    this.router.navigateByUrl('create-insurance-stepper').then(r => console.log(r));
   }
 }

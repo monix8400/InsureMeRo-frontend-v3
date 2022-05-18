@@ -1,7 +1,6 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <!--  <span>HOME</span> -->
-    <span><a href="/auth-home">HOME</a></span>
+    <span><a href="/auth-home"><img id="logo" src="../../../assets/logoInsureMeRo.png" alt="logo"/></a></span>
     <span class="spacer"></span>
     <button mat-button [matMenuTriggerFor]="menu">
       <div class="user">
@@ -14,7 +13,7 @@
     </button>
     <mat-menu #menu="matMenu">
       <ng-template ngFor let-item [ngForOf]="user_dropdown" let-i="index">
-        <button mat-menu-item  (click)="onClick(item)">{{item.label}}</button>
+        <button mat-menu-item id="{{item.label}}" (click)="onClick(item)">{{item.label}}</button>
       </ng-template>
     </mat-menu>
   </mat-toolbar-row>

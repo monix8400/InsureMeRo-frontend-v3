@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-content>
+    <mat-stepper labelPosition="bottom" #stepper linear>
+      <mat-step [stepControl]="personTypeForm">
+        <ng-template matStepLabel>Person-type</ng-template>
+        <mat-card-title class="d-flex justify-content-center">Choose the type of person:</mat-card-title>
+        <create-insurance-choose-type-pi
+          (sendPersonType)="onClickChoosePersonType($event)"></create-insurance-choose-type-pi>
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center">
+            <button mat-raised-button matStepperNext type="submit" color="primary"
+                    style="padding: 0.5rem 3rem; font-size: 1rem;" (click)="onNextPersonType()">Next
+            </button>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step *ngIf="personTypeI">
+        <ng-template matStepLabel>Personal Information</ng-template>
+        <mat-card-title class="d-flex justify-content-center">Complete your personal information:</mat-card-title>
+        <create-insurance-pi-i (sendPersonInformation)="onClickSendPI($event)"></create-insurance-pi-i>
+      </mat-step>
+
+      <mat-step *ngIf="!personTypeI">
+        <ng-template matStepLabel>Personal Information</ng-template>
+        <mat-card-title class="d-flex justify-content-center">Complete your personal information:</mat-card-title>
+        <create-insurance-pi-l (sendPersonInformation)="onClickSendPI($event)"></create-insurance-pi-l>
+
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Vehicle Information</ng-template>
+        <mat-card-title class="d-flex justify-content-center">Complete your vehicle information:</mat-card-title>
+        <create-insurance-v (sendVehicleInformation)="onClickSendVI($event)"></create-insurance-v>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Drivers</ng-template>
+        <mat-card-title class="d-flex justify-content-center">Add other drivers?</mat-card-title>
+        <create-insurance-d-list (sendDriversList)="onClickSendDL($event)"></create-insurance-d-list>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Create Insurance</ng-template>
+        <mat-card-title class="d-flex justify-content-center">Create Insurance</mat-card-title>
+        <choose-insurance-dates (sendStartDate)="onClickSendST($event)"
+                                (sendNrMonths)="onClickSendValabilityMonths($event)"></choose-insurance-dates>
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center">
+            <button mat-raised-button matStepperNext type="submit" color="primary"
+                    style="padding: 0.5rem 3rem; font-size: 1rem;" (click)="createInsurance()">Create
+            </button>
+          </div>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </mat-card-content>
+</mat-card>

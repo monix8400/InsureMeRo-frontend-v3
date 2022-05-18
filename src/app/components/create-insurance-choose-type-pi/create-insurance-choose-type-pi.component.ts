@@ -1,23 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Component, ElementRef, EventEmitter, OnInit, Output, Renderer2, ViewChild} from '@angular/core';
+
 
 @Component({
   selector: 'create-insurance-choose-type-pi',
   templateUrl: './create-insurance-choose-type-pi.component.html',
-  styleUrls: ['./create-insurance-choose-type-pi.component.css']
+  styleUrls: ['./create-insurance-choose-type-pi.component.scss']
 })
 export class CreateInsuranceChooseTypePiComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  @Output() sendPersonType = new EventEmitter<string>();
+
+  @ViewChild('btnI') btnI!: ElementRef;
+
+  @ViewChild('btnL') btnL!: ElementRef;
+
+  constructor(private renderer: Renderer2) {
+  }
 
   ngOnInit(): void {
   }
 
-  onClickIndividual() {
-    this.router.navigateByUrl('create-insurance-pi-i').then(r => console.log(r));
-  }
-
-  onClickLegalPerson() {
-    this.router.navigateByUrl('create-insurance-pi-l').then(r => console.log(r));
+  onClick(personType: string) {
+    this.sendPersonType.emit(personType);
+    if (personType == "Individual") {
+      this.renderer.addClass(this.btnI.nativeElement, "active");
+      this.renderer.removeClass(this.btnL.nativeElement, "active");
+    } else {
+      this.renderer.addClass(this.btnL.nativeElement, "active");
+      this.renderer.removeClass(this.btnI.nativeElement, "active");
+    }
   }
 }

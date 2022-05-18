@@ -35,8 +35,15 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
-import { CreateInsuranceChooseDComponent } from './components/create-insurance-choose-d/create-insurance-choose-d.component';
 import {MatRadioModule} from "@angular/material/radio";
+import {
+  CreateInsuranceStepperComponent
+} from './components/create-insurance-stepper/create-insurance-stepper.component';
+import {MatStepperModule} from "@angular/material/stepper";
+import {CreateInsuranceDListComponent} from './components/create-insurance-d-list/create-insurance-d-list.component';
+import {ChooseInsuranceDatesComponent} from './components/choose-insurance-dates/choose-insurance-dates.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 
 
 @NgModule({
@@ -58,7 +65,9 @@ import {MatRadioModule} from "@angular/material/radio";
     SettingsComponent,
     UserInfoComponent,
     AccountLayoutComponent,
-    CreateInsuranceChooseDComponent,
+    CreateInsuranceStepperComponent,
+    CreateInsuranceDListComponent,
+    ChooseInsuranceDatesComponent,
 
   ],
   imports: [
@@ -78,8 +87,11 @@ import {MatRadioModule} from "@angular/material/radio";
     ReactiveFormsModule,
     MatIconModule,
     MatRadioModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
   ],
-  providers: [HTTPRequestService],
+  providers: [HTTPRequestService, {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {strict: true}}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

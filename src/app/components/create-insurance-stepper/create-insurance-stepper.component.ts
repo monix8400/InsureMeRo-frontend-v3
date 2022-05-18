@@ -1,0 +1,71 @@
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
+
+@Component({
+  selector: 'create-insurance-stepper',
+  templateUrl: './create-insurance-stepper.component.html',
+  styleUrls: ['./create-insurance-stepper.component.scss']
+})
+export class CreateInsuranceStepperComponent implements OnInit {
+  personTypeForm = new FormGroup({
+    responsePT: new FormControl(),
+  });
+  personTypeI: any;
+  personType: any;
+
+  personalInfo: any;
+  vehicleInfo: any;
+  driversInfo: any;
+  startDate: any;
+  nrValabilityMonths: any;
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
+
+  onNextPersonType() {
+    this.changePersonType()
+  }
+
+  changePersonType() {
+    this.personTypeI = this.personType == 'Individual';
+  }
+
+  onClickChoosePersonType(data: any) {
+    this.personType = data;
+  }
+
+  onClickSendPI(data: any) {
+    this.personalInfo = data;
+    return this.personalInfo
+  }
+
+  onClickSendVI(data: any) {
+    this.vehicleInfo = data;
+    return this.vehicleInfo
+  }
+
+  onClickSendDL(data: any) {
+    this.driversInfo = data;
+    return this.driversInfo
+  }
+
+  onClickSendST(data: any) {
+    this.startDate = data;
+  }
+
+  onClickSendValabilityMonths(data: any) {
+    this.nrValabilityMonths = data;
+  }
+
+  createInsurance() {
+    console.log(this.personalInfo)
+    console.log(this.vehicleInfo)
+    console.log(this.driversInfo)
+    console.log(this.startDate)
+    console.log(this.nrValabilityMonths)
+  }
+
+}

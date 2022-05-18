@@ -1,0 +1,18 @@
+<div class="row justify-content-center align-items-center">
+  <div class="start-date col-12 col-md-6 d-flex justify-content-center align-items-center">
+    <span>Choose start date:</span>
+    <mat-card class="calendar-card">
+      <mat-calendar [(selected)]="selected" (selectedChange)="getChangedValue($event)"></mat-calendar>
+    </mat-card>
+  </div>
+  <div class="col-12 col-md-6">
+    <span>Choose valability:</span>
+    <div #btn6 class="month-card" (click)='selectedMonths(6)'>
+      <p>6 Months</p>
+    </div>
+
+    <div #btn12 class="month-card" (click)='selectedMonths(12)'>
+      <p>12 Months</p>
+    </div>
+  </div>
+</div>

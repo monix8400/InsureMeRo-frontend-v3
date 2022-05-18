@@ -1,0 +1,36 @@
+@import "./src/variables";
+
+.row {
+  justify-content: center;
+}
+
+$cardBorderColor: #363636;
+
+.person-type-card {
+  background-color: $Background;
+  border: 2px solid $cardBorderColor;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 200px;
+  margin: 20px;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .material-icons {
+    font-size: 40px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 26px;
+  }
+
+  &:hover, &.active {
+    border: 2px solid $Accent;
+  }
+}

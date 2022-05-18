@@ -6,7 +6,7 @@ import {User} from "../../models/user";
 @Component({
   selector: 'auth-layout',
   templateUrl: './auth-layout.component.html',
-  styleUrls: ['./auth-layout.component.css']
+  styleUrls: ['./auth-layout.component.scss']
 })
 export class AuthLayoutComponent implements OnInit {
   user: User = new User();
