@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {InsuranceService} from "../../services/insurance.service";
 
 @Component({
   selector: 'create-insurance-stepper',
@@ -19,7 +20,7 @@ export class CreateInsuranceStepperComponent implements OnInit {
   startDate: any;
   nrValabilityMonths: any;
 
-  constructor() {
+  constructor(private insuranceService: InsuranceService) {
   }
 
   ngOnInit(): void {
@@ -66,6 +67,15 @@ export class CreateInsuranceStepperComponent implements OnInit {
     console.log(this.driversInfo)
     console.log(this.startDate)
     console.log(this.nrValabilityMonths)
+    let object: any = {
+      "personalInfo": this.personalInfo,
+      "vehicle": this.vehicleInfo,
+      "driverList": this.driversInfo.drivers,
+      "startDate": this.startDate,
+      "months": this.nrValabilityMonths,
+    }
+    console.log(object)
+    this.insuranceService.createInsurance(object)
   }
 
 }
