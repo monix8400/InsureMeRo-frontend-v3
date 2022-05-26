@@ -33,7 +33,7 @@ import {UserInfoComponent} from './components/user-info/user-info.component';
 import {AccountLayoutComponent} from './pages/account-layout/account-layout.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
 import {MatRadioModule} from "@angular/material/radio";
 import {
@@ -45,6 +45,8 @@ import {ChooseInsuranceDatesComponent} from './components/choose-insurance-dates
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 import { InsuranceComponent } from './components/insurance/insurance.component';
+import { PersonalInfoDialogComponent } from './components/personal-info-dialog/personal-info-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -70,6 +72,7 @@ import { InsuranceComponent } from './components/insurance/insurance.component';
     CreateInsuranceDListComponent,
     ChooseInsuranceDatesComponent,
     InsuranceComponent,
+    PersonalInfoDialogComponent,
 
   ],
   imports: [
@@ -92,6 +95,8 @@ import { InsuranceComponent } from './components/insurance/insurance.component';
     MatStepperModule,
     MatDatepickerModule,
     MatMomentDateModule,
+    MatDialogModule,
+    FormsModule,
   ],
   providers: [HTTPRequestService, {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {strict: true}}],
   bootstrap: [AppComponent]

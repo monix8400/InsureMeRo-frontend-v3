@@ -1,6 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {PersonalInfo} from "../../models/personalInfo";
+import {MatDialog} from "@angular/material/dialog";
+import {PersonalInfoDialogComponent} from "../personal-info-dialog/personal-info-dialog.component";
 
 @Component({
   selector: 'create-insurance-pi-i',
@@ -25,7 +27,7 @@ export class CreateInsurancePiIComponent implements OnInit {
 
   @Output() sendPersonInformation = new EventEmitter<PersonalInfo>();
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -39,4 +41,20 @@ export class CreateInsurancePiIComponent implements OnInit {
   onNext() {
     this.onClick()
   }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(PersonalInfoDialogComponent, {
+      width: '50%',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.sendPersonInformation.emit(result);
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
+  }
+}
+export interface DialogData {
+  animal: string;
+  name: string;
 }

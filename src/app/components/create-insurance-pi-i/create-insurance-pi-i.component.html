@@ -1,8 +1,8 @@
 <form [formGroup]="personalInfoForm" (ngSubmit)="onNext()">
   <div class="row">
     <div class="col-12  d-flex justify-content-center">
-      <button mat-raised-button color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;">Use your info from
-        your Profile
+      <button mat-raised-button (click)="openDialog()" color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;">
+        Use your info from your Profile
       </button>
     </div>
   </div>
@@ -11,8 +11,6 @@
       <h1 style="margin: 0;">OR</h1>
     </div>
   </div>
-
-  <!--  <div formGroupName="user">-->
 
   <div class="row">
     <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
@@ -42,7 +40,6 @@
       <input type="text" matInput width="200rem" placeholder="CNP" formControlName="code" required>
     </mat-form-field>
   </div>
-  <!--  </div>-->
 
   <div formGroupName="address">
     <div class="row">
