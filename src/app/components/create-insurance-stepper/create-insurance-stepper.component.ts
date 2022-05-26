@@ -31,7 +31,7 @@ export class CreateInsuranceStepperComponent implements OnInit {
   }
 
   changePersonType() {
-    this.personTypeI = this.personType == 'Individual';
+    this.personTypeI = this.personType == 'INDIVIDUAL';
   }
 
   onClickChoosePersonType(data: any) {
@@ -40,6 +40,7 @@ export class CreateInsuranceStepperComponent implements OnInit {
 
   onClickSendPI(data: any) {
     this.personalInfo = data;
+    this.personalInfo.name = `${data.firstname} ${data.lastname}`;
     return this.personalInfo
   }
 
@@ -62,12 +63,12 @@ export class CreateInsuranceStepperComponent implements OnInit {
   }
 
   createInsurance() {
-    console.log(this.personalInfo)
-    console.log(this.vehicleInfo)
-    console.log(this.driversInfo)
-    console.log(this.startDate)
-    console.log(this.nrValabilityMonths)
+    this.personalInfo.personType = this.personType;
+    let address = this.personalInfo.address;
+    delete this.personalInfo.address;
+
     let object: any = {
+      "address": address,
       "personalInfo": this.personalInfo,
       "vehicle": this.vehicleInfo,
       "driverList": this.driversInfo.drivers,

@@ -22,7 +22,7 @@ export class CreateInsuranceChooseTypePiComponent implements OnInit {
 
   onClick(personType: string) {
     this.sendPersonType.emit(personType);
-    if (personType == "Individual") {
+    if (personType == "INDIVIDUAL") {
       this.renderer.addClass(this.btnI.nativeElement, "active");
       this.renderer.removeClass(this.btnL.nativeElement, "active");
     } else {

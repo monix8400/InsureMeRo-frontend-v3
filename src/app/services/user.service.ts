@@ -29,7 +29,6 @@ export class UserService {
   }
 
   getCurrentUser() {
-
     return this.httpRequestService.get('user/user', null, this.headers);
   }
 }

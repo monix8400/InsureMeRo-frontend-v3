@@ -10,12 +10,12 @@ import {Vehicle} from "../../models/vehicle";
 export class CreateInsuranceVComponent implements OnInit {
   vehicleForm = new FormGroup({
     registrationNr: new FormControl(),
-    category: new FormControl(),
+    categoryCode: new FormControl(),
     make: new FormControl(),
     model: new FormControl(),
     fuelType: new FormControl(),
     chassisSeries: new FormControl(),
-    CIVSeries: new FormControl(),
+    civSeries: new FormControl(),
     yearOfManufacture: new FormControl(),
     cylindricalCapacity: new FormControl(),
     maxNetPower: new FormControl(),

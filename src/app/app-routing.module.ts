@@ -6,7 +6,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {RegisterComponent} from "./components/register/register.component";
 import {AuthHomeComponent} from "./components/auth-home/auth-home.component";
 import {AccountLayoutComponent} from "./pages/account-layout/account-layout.component";
-import {InsurancesComponent} from "./components/insurances/insurances.component";
+import {DisplayInsurancesComponent} from "./components/display-insurances/display-insurances.component";
 import {UserInfoComponent} from "./components/user-info/user-info.component";
 import {AccountInfoComponent} from "./components/account-info/account-info.component";
 import {SettingsComponent} from "./components/settings/settings.component";
@@ -51,8 +51,8 @@ const routes: Routes = [
           component: CreateInsuranceStepperComponent,
         },
         {
-          path: 'insurances',
-          component: InsurancesComponent,
+          path: 'display-insurances',
+          component: DisplayInsurancesComponent,
         },
         {
           path: 'profile',

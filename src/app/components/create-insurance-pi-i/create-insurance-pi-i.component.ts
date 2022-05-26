@@ -11,9 +11,9 @@ export class CreateInsurancePiIComponent implements OnInit {
   personalInfoForm = new FormGroup({
     firstname: new FormControl(),
     lastname: new FormControl(),
-    idSeries: new FormControl(),
-    idNumber: new FormControl(),
-    cnpCode: new FormControl(),
+    identityCardSeries: new FormControl(),
+    identityCardNr: new FormControl(),
+    code: new FormControl(),
     address: new FormGroup({
       city: new FormControl(),
       county: new FormControl(),

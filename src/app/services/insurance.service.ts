@@ -14,4 +14,20 @@ export class InsuranceService {
   createInsurance(data: Object) {
     return this.httpRequestService.post('insurance/addInsurance', data, null, this.headers).subscribe();
   }
+
+  getAllInsurances() {
+    return this.httpRequestService.get('insurance/getInsurances', null, this.headers);
+  }
+
+  getInsurancesForCurrentUser(){
+    return this.httpRequestService.get('insurance/getInsurancesForCurrentUser', null, this.headers);
+  }
+
+  getPersonalInfoById(id: number) {
+    return this.httpRequestService.get('personalInfo/getPersonalInfoById/' + id, null, this.headers);
+  }
+
+  getVehicleById(id: number) {
+    return this.httpRequestService.get('vehicle/getVehicleById/' + id, null, this.headers);
+  }
 }

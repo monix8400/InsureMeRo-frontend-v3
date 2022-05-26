@@ -13,7 +13,7 @@ export class AuthLayoutComponent implements OnInit {
 
   user_dropdown = [
     {label: 'Profile', routerLink: ['/profile']},
-    {label: 'My Insurances', routerLink: ['/insurances']},
+    {label: 'My Insurances', routerLink: ['/display-insurances']},
     {label: 'Logout', command: () => this.logout()}
   ];
 

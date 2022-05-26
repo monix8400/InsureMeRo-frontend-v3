@@ -1,0 +1,27 @@
+<div *ngIf="insurances?.length">
+  <ng-template ngFor let-item [ngForOf]="insurances" let-i="index">
+    <mat-card>
+      <mat-card-title>
+        <h1>Insurance {{i + 1}}</h1>
+      </mat-card-title>
+      <mat-card-content>
+        <h3>
+          <label>Name:</label> {{item["personalInfo"]["name"]}}
+          <br>
+          <label>Vehicle:</label> {{item["vehicle"]["make"] + " " + item["vehicle"]["model"]}}
+          <br>
+          <label>Expire date:</label> {{item["insurance"]["validTo"]}}</h3>
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+</div>
+<div *ngIf="!insurances?.length">
+  <h2 style="color: white; margin: 1rem;">You don't have any Insurances :(</h2>
+</div>
+<div class="row align-items-center justify-content-center" style="margin: 0">
+  <div class="col-md-4 col-12 d-flex align-items-center justify-content-center">
+    <button mat-raised-button color="primary" (click)="onClick()" style="padding: 0.5rem 3rem; font-size: 1rem;">
+      Create New Insurance
+    </button>
+  </div>
+</div>

@@ -27,7 +27,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatMenuModule} from "@angular/material/menu";
 import {NgChartsModule} from 'ng2-charts';
 import {AccountInfoComponent} from './components/account-info/account-info.component';
-import {InsurancesComponent} from './components/insurances/insurances.component';
+import {DisplayInsurancesComponent} from './components/display-insurances/display-insurances.component';
 import {SettingsComponent} from './components/settings/settings.component';
 import {UserInfoComponent} from './components/user-info/user-info.component';
 import {AccountLayoutComponent} from './pages/account-layout/account-layout.component';
@@ -44,6 +44,7 @@ import {CreateInsuranceDListComponent} from './components/create-insurance-d-lis
 import {ChooseInsuranceDatesComponent} from './components/choose-insurance-dates/choose-insurance-dates.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
+import { InsuranceComponent } from './components/insurance/insurance.component';
 
 
 @NgModule({
@@ -61,13 +62,14 @@ import {MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/mat
     CreateInsuranceVComponent,
     CreateInsuranceDComponent,
     AccountInfoComponent,
-    InsurancesComponent,
+    DisplayInsurancesComponent,
     SettingsComponent,
     UserInfoComponent,
     AccountLayoutComponent,
     CreateInsuranceStepperComponent,
     CreateInsuranceDListComponent,
     ChooseInsuranceDatesComponent,
+    InsuranceComponent,
 
   ],
   imports: [

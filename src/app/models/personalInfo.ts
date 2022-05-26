@@ -1,19 +1,20 @@
-import {Address} from "./address";
-
 export class PersonalInfo {
-  personType: string; //1-individual, 2-legalPerson
+  id: number | undefined;
+  personType: string; //0-individual, 1-legalPerson
   name: string;
   identityCardSeries: string;
   identityCardNr: string;
   code: string;
-  address: Address;
+  addressId: number;
+  bonusMalus: string
 
-  constructor(personType="INDIVIDUAL", name="", identityCardSeries="", identityCardNr="", code="", address: Address) {
+  constructor(personType = "INDIVIDUAL", name = "", identityCardSeries = "", identityCardNr = "", code = "", addressId: number, bonusMalus = "b0") {
     this.personType = personType;
     this.name = name;
     this.identityCardSeries = identityCardSeries;
     this.identityCardNr = identityCardNr;
     this.code = code;
-    this.address = address;
+    this.addressId = addressId;
+    this.bonusMalus = bonusMalus;
   }
 }
