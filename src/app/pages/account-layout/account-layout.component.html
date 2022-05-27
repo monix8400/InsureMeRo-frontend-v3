@@ -3,7 +3,12 @@
     <mat-nav-list>
       <ng-template ngFor let-item [ngForOf]="menu" let-i="index">
         <a routerLink="{{item.routerLink}}">
-          <mat-list-item>{{item.label}}</mat-list-item>
+          <mat-list-item>
+            <mat-icon>
+              {{item.icon}}
+            </mat-icon>
+            {{item.label}}
+          </mat-list-item>
         </a>
         <mat-divider></mat-divider>
       </ng-template>

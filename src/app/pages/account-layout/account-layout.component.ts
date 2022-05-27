@@ -8,9 +8,9 @@ import {Component, OnInit} from '@angular/core';
 export class AccountLayoutComponent implements OnInit {
 
   menu = [
-    {label: 'User Information', routerLink: ['/profile']},
-    {label: 'Account Information', routerLink: ['account-info']},
-    {label: 'Settings', routerLink: ['settings']}
+    {icon:"person",label: 'User Information', routerLink: ['/profile']},
+    {icon:"badge",label: 'Account Information', routerLink: ['account-info']},
+    {icon:"settings",label: 'Settings', routerLink: ['settings']}
   ];
 
   constructor() {

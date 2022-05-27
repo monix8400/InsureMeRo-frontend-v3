@@ -1,4 +1,9 @@
+@import "./src/variables";
+
 .sidenav{
   height: 100%;
 }
-
+mat-icon{
+  color: $Primary;
+  margin-right: 0.5rem;
+}

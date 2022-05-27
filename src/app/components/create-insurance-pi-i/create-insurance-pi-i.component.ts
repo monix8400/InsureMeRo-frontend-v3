@@ -21,7 +21,7 @@ export class CreateInsurancePiIComponent implements OnInit {
       county: new FormControl(),
       street: new FormControl(),
       number: new FormControl(),
-      zip: new FormControl()
+      zipCode: new FormControl()
     }),
   });
 
@@ -43,18 +43,22 @@ export class CreateInsurancePiIComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(PersonalInfoDialogComponent, {
+    let dialogRef = this.dialog.open(PersonalInfoDialogComponent, {
       width: '50%',
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.sendPersonInformation.emit(result);
-      console.log('The dialog was closed');
-      // this.animal = result;
+      console.log(result.data)
+      if (result.data!=="you cancelled") {
+        let name=result.data.personalInfo.name;
+
+        this.personalInfoForm.controls["lastname"].setValue(name.split(" ")[1]);
+        this.personalInfoForm.controls["firstname"].setValue(name.split(" ")[0]);
+        this.personalInfoForm.controls["identityCardSeries"].setValue(result.data.personalInfo.identityCardSeries);
+        this.personalInfoForm.controls["identityCardNr"].setValue(result.data.personalInfo.identityCardNr);
+        this.personalInfoForm.controls["code"].setValue(result.data.personalInfo.code);
+        this.personalInfoForm.patchValue({address: result.data.address});
+      }
     });
   }
-}
-export interface DialogData {
-  animal: string;
-  name: string;
 }

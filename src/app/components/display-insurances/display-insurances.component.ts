@@ -15,13 +15,11 @@ export class DisplayInsurancesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInsurancesForCurrentUser()
-
   }
 
   getInsurancesForCurrentUser() {
     this.insuranceService.getInsurancesForCurrentUser().subscribe((data) => {
       this.insurances = data;
-      console.log("insurances:" + JSON.stringify(this.insurances))
     });
   }
 
