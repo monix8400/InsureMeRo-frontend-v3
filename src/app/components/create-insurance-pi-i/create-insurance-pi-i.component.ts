@@ -49,7 +49,7 @@ export class CreateInsurancePiIComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(result.data)
-      if (result.data!=="you cancelled") {
+      if (result.data!=="Cancel") {
         let name=result.data.personalInfo.name;
 
         this.personalInfoForm.controls["lastname"].setValue(name.split(" ")[1]);

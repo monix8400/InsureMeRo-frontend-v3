@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2,} from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2, ViewChild,} from '@angular/core';
 import {MatDialogRef} from "@angular/material/dialog";
 import {PersonalInfoService} from "../../services/personal-info.service";
 
@@ -11,6 +11,8 @@ export class PersonalInfoDialogComponent implements OnInit {
   personalInfoList: [] = [];
   personalInfo: any;
 
+  @ViewChild('items') items!: ElementRef;
+
   constructor(public dialogRef: MatDialogRef<PersonalInfoDialogComponent>, private personalInfoService: PersonalInfoService, private renderer: Renderer2) {
   }
 
@@ -21,19 +23,21 @@ export class PersonalInfoDialogComponent implements OnInit {
   getPersonalInfoForCurrentUser() {
     this.personalInfoService.getPersonalInfoForCurrentUser().subscribe((data) => {
       this.personalInfoList = data;
-      console.log("PI-I:" + JSON.stringify(this.personalInfoList))
     });
   }
 
   onNoClick(): void {
-    this.dialogRef.close({data: 'you cancelled'});
+    this.dialogRef.close({data: 'Cancel'});
   }
 
-  onSelect(item: any) {
+  onSelect(item: any, index: any) {
     this.personalInfo = item;
-    //sa fac sa ramana selectat !!!!!!!!
-    // this.renderer.addClass(elem.nativeElement, "active");
-    // this.renderer.removeClass(this.item.nativeElement, "active");
+
+    let childElements = Array.of(this.items.nativeElement.children);
+    for (let i = 0; i <= childElements.length; i++) {
+      this.renderer.removeClass(this.items.nativeElement.childNodes.item(i), "active");
+    }
+    this.renderer.addClass(this.items.nativeElement.childNodes.item(index), "active");
   }
 
   onClick() {

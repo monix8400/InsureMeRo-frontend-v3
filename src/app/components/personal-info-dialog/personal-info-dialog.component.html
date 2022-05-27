@@ -1,8 +1,8 @@
 <h1 mat-dialog-title>Choose from your existing personal information:</h1>
 <div mat-dialog-content>
-  <div *ngIf="personalInfoList?.length">
+  <div *ngIf="personalInfoList?.length" #items>
     <ng-template ngFor let-item [ngForOf]="personalInfoList" let-i="index">
-      <mat-card class="personal-info-card" (click)='onSelect(item)' id="item{{i}}">
+      <mat-card class="personal-info-card" (click)='onSelect(item,i)' id="item{{i}}">
         <mat-card-content>
           <h3>
             <div class="row">
