@@ -23,6 +23,7 @@ export class PersonalInfoDialogComponent implements OnInit {
   getPersonalInfoForCurrentUser() {
     this.personalInfoService.getPersonalInfoForCurrentUser().subscribe((data) => {
       this.personalInfoList = data;
+      console.log(data)
     });
   }
 
@@ -34,8 +35,10 @@ export class PersonalInfoDialogComponent implements OnInit {
     this.personalInfo = item;
 
     let childElements = Array.of(this.items.nativeElement.children);
-    for (let i = 0; i <= childElements.length; i++) {
-      this.renderer.removeClass(this.items.nativeElement.childNodes.item(i), "active");
+    if (this.items.nativeElement.childNodes.length>2) {
+      for (let i = 0; i <= childElements.length; i++) {
+        this.renderer.removeClass(this.items.nativeElement.childNodes.item(i), "active");
+      }
     }
     this.renderer.addClass(this.items.nativeElement.childNodes.item(index), "active");
   }

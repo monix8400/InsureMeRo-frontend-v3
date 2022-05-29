@@ -14,6 +14,7 @@ import {AuthGuard} from "./services/auth.guard";
 import {
   CreateInsuranceStepperComponent
 } from "./components/create-insurance-stepper/create-insurance-stepper.component";
+import {ShowInsurancePriceComponent} from "./components/show-insurance-price/show-insurance-price.component";
 
 const routes: Routes = [
   {
@@ -49,6 +50,10 @@ const routes: Routes = [
         {
           path: 'create-insurance-stepper',
           component: CreateInsuranceStepperComponent,
+        },
+        {
+          path:'show-insurance-price',
+          component: ShowInsurancePriceComponent,
         },
         {
           path: 'display-insurances',

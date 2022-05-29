@@ -15,7 +15,7 @@ export class CreateInsuranceVComponent implements OnInit {
     model: new FormControl(),
     fuelType: new FormControl(),
     chassisSeries: new FormControl(),
-    civSeries: new FormControl(),
+    civseries: new FormControl(),
     yearOfManufacture: new FormControl(),
     cylindricalCapacity: new FormControl(),
     maxNetPower: new FormControl(),

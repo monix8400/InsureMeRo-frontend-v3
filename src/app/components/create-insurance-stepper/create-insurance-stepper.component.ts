@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {InsuranceService} from "../../services/insurance.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'create-insurance-stepper',
@@ -20,7 +21,7 @@ export class CreateInsuranceStepperComponent implements OnInit {
   startDate: any;
   nrValabilityMonths: any;
 
-  constructor(private insuranceService: InsuranceService) {
+  constructor(private insuranceService: InsuranceService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -76,7 +77,12 @@ export class CreateInsuranceStepperComponent implements OnInit {
       "months": this.nrValabilityMonths,
     }
     console.log(object)
-    this.insuranceService.createInsurance(object)
+    let insuranceId;
+    this.insuranceService.createInsurance(object).subscribe((response) => {
+      insuranceId = response;
+      console.log("InsuranceID: " + insuranceId)
+    });
+    this.router.navigate(['show-insurance-price'], {state: {insurId: 'insuranceId'}});
   }
 
 }
