@@ -30,12 +30,4 @@ export class InsuranceService {
   getInsuranceById(id: number) {
     return this.httpRequestService.get('insurance/getInsuranceById/' + id, null, this.headers);
   }
-
-  getPersonalInfoById(id: number) {
-    return this.httpRequestService.get('personalInfo/getPersonalInfoById/' + id, null, this.headers);
-  }
-
-  getVehicleById(id: number) {
-    return this.httpRequestService.get('vehicle/getVehicleById/' + id, null, this.headers);
-  }
 }

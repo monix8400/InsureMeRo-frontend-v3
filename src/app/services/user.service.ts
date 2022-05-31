@@ -20,10 +20,6 @@ export class UserService {
     return this.httpRequestService.get('user/getUsers');
   }
 
-  getUserById(id: number) {
-    return this.httpRequestService.get('user/getUserById/' + id);
-  }
-
   deleteUserById(id: number) {
     return this.httpRequestService.delete('user/deleteUserById/' + id, null, this.headers).subscribe();
   }

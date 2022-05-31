@@ -14,4 +14,8 @@ export class PersonalInfoService {
   getPersonalInfoForCurrentUser() {
     return this.httpRequestService.get('insurance/getPersonalInfoForCurrentUser', null, this.headers);
   }
+
+  getPersonalInfoById(id: number) {
+    return this.httpRequestService.get('personalInfo/getPersonalInfoById/' + id, null, this.headers);
+  }
 }
