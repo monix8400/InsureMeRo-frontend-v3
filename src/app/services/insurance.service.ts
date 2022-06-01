@@ -23,8 +23,8 @@ export class InsuranceService {
     return this.httpRequestService.get('insurance/getInsurancesForCurrentUser', null, this.headers);
   }
 
-  getInsurancePdf() {
-    return this.httpRequestService.get('insurance/getInsurancePdf');
+  getInsurancePdf(id: number) {
+    return this.httpRequestService.get('insurance/getInsurancePdf/' + id);
   }
 
   getInsuranceById(id: number) {

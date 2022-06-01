@@ -10,11 +10,13 @@ import {ActivatedRoute} from "@angular/router";
 export class ShowInsurancePriceComponent implements AfterViewInit {
   currentInsurance: any;
   currentInsuranceId: any;
+  url: any;
 
   constructor(private insuranceService: InsuranceService, private route: ActivatedRoute) {
     this.currentInsuranceId = this.route.snapshot.paramMap.get('insurId');
+    this.url = "http://localhost:8080/insurance/getInsurancePdf/" + this.currentInsuranceId
     // console.log("current Insurance ID: " + this.currentInsuranceId);
-    this.getInsuranceById(18)
+    this.getInsuranceById(this.currentInsuranceId)
   }
 
   ngAfterViewInit(): void {
@@ -29,7 +31,7 @@ export class ShowInsurancePriceComponent implements AfterViewInit {
 
 
   download() {
-    this.insuranceService.getInsurancePdf().subscribe(
+    this.insuranceService.getInsurancePdf(this.currentInsuranceId).subscribe(
       (data) => {
         console.log(data)
         let file = new Blob([data], {type: 'application/pdf'})
