@@ -1,0 +1,19 @@
+@import "./src/variables";
+
+label {
+  color: $Accent;
+}
+
+.expired {
+  mat-card{
+    margin-bottom: 0;
+    border: 2px solid $Warn;
+  }
+}
+p{
+  margin-right: 16px;
+  color: $Warn;
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+}

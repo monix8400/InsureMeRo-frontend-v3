@@ -1,18 +1,8 @@
-<div *ngIf="insurances?.length">
-  <ng-template ngFor let-item [ngForOf]="insurances" let-i="index">
-    <mat-card>
-      <mat-card-title>
-        <h1>Insurance {{i + 1}}</h1>
-      </mat-card-title>
-      <mat-card-content>
-        <h3>
-          <label>Name:</label> {{item["personalInfo"]["name"]}}
-          <br>
-          <label>Vehicle:</label> {{item["vehicle"]["make"] + " " + item["vehicle"]["model"]}}
-          <br>
-          <label>Expire date:</label> {{item["insurance"]["validTo"]}}</h3>
-      </mat-card-content>
-    </mat-card>
+<div *ngIf="insurances?.length" class="row" style="margin: 0">
+  <ng-template ngFor let-item [ngForOf]="insurances">
+    <div class="col-md-4">
+      <insurance-card [insurance]="item"></insurance-card>
+    </div>
   </ng-template>
 </div>
 <div *ngIf="!insurances?.length">

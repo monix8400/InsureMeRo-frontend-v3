@@ -44,9 +44,11 @@ import {CreateInsuranceDListComponent} from './components/create-insurance-d-lis
 import {ChooseInsuranceDatesComponent} from './components/choose-insurance-dates/choose-insurance-dates.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
-import { ShowInsurancePriceComponent } from './components/show-insurance-price/show-insurance-price.component';
-import { PersonalInfoDialogComponent } from './components/personal-info-dialog/personal-info-dialog.component';
+import {ShowInsurancePriceComponent} from './components/show-insurance-price/show-insurance-price.component';
+import {PersonalInfoDialogComponent} from './components/personal-info-dialog/personal-info-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {InsuranceCardComponent} from './components/insurance-card/insurance-card.component';
 
 
 @NgModule({
@@ -73,6 +75,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     ChooseInsuranceDatesComponent,
     ShowInsurancePriceComponent,
     PersonalInfoDialogComponent,
+    InsuranceCardComponent,
 
   ],
   imports: [
@@ -98,7 +101,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatDialogModule,
     FormsModule,
   ],
-  providers: [HTTPRequestService, {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {strict: true}}],
+  providers: [HTTPRequestService, {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {strict: true}}, MatSnackBar],
   bootstrap: [AppComponent]
 })
 export class AppModule {
