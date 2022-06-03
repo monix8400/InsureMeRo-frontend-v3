@@ -13,7 +13,7 @@ export class UserService {
   }
 
   addUser(user: User) {
-    return this.httpRequestService.post('user/addUser', user).subscribe();
+    return this.httpRequestService.post('user/addUser', user, null,undefined,'text');
   }
 
   getUsers() {

@@ -1,4 +1,22 @@
 /*!* You can add global styles to this file, and also import other style files *!*/
+$Primary: #7b1fa2;
+$Accent: #69f0ae;
+$Warn: #f44336;
+
+.primary-snackBar {
+  background-color: $Primary;
+  color: #fff;
+}
+
+.accent-snackBar {
+  background-color: $Accent;
+}
+
+.warn-snackBar {
+  background-color: $Warn;
+  color: #fff;
+}
+
 :host {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
@@ -306,7 +324,7 @@ mat-card {
   margin: 1rem;
 }
 
-#logo{
+#logo {
   object-fit: contain;
   height: 50px;
 }

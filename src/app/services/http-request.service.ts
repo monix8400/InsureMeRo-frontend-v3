@@ -15,11 +15,12 @@ export class HTTPRequestService {
    * Http GET
    *
    * @param url URL to call
-   * @param params optional parameters such as HttpHeaders, HttpParams, reportProgress etc.
+   * @param params optional parameters such as HttpParams, reportProgress etc.
    * @param headers
+   * @param responseType
    */
-  public get(url: string, params?: any, headers?: HttpHeaders): Observable<any> {
-    return this.invoke('GET', url, null, params, headers);
+  public get(url: string, params?: any, headers?: HttpHeaders, responseType?: any): Observable<any> {
+    return this.invoke('GET', url, null, params, headers, responseType);
   }
 
   /**
@@ -27,11 +28,12 @@ export class HTTPRequestService {
    *
    * @param url URL to call
    * @param data payload
-   * @param params parameters such as HttpHeaders, HttpParams, reportProgress etc.
+   * @param params parameters such as HttpParams, reportProgress etc.
    * @param headers
+   * @param responseType
    */
-  public put(url: string, data: any, params?: any, headers?: HttpHeaders): Observable<any> {
-    return this.invoke('PUT', url, data, params, headers);
+  public put(url: string, data: any, params?: any, headers?: HttpHeaders, responseType?: any): Observable<any> {
+    return this.invoke('PUT', url, data, params, headers, responseType);
   }
 
   /**
@@ -39,11 +41,12 @@ export class HTTPRequestService {
    *
    * @param url URL to call
    * @param data payload
-   * @param params parameters such as HttpHeaders, HttpParams, reportProgress etc.
+   * @param params parameters such as HttpParams, reportProgress etc.
    * @param headers
+   * @param responseType
    */
-  public patch(url: string, data: any, params?: any, headers?: HttpHeaders): Observable<any> {
-    return this.invoke('PATCH', url, data, params, headers);
+  public patch(url: string, data: any, params?: any, headers?: HttpHeaders, responseType?: any): Observable<any> {
+    return this.invoke('PATCH', url, data, params, headers, responseType);
   }
 
   /**
@@ -53,9 +56,10 @@ export class HTTPRequestService {
    * @param data payload
    * @param params parameters such as HttpParams, reportProgress etc.
    * @param headers
+   * @param responseType
    */
-  public post(url: string, data: any, params?: any, headers?: HttpHeaders): Observable<any> {
-    return this.invoke('POST', url, data, params, headers);
+  public post(url: string, data: any, params?: any, headers?: HttpHeaders, responseType?: any): Observable<any> {
+    return this.invoke('POST', url, data, params, headers, responseType);
   }
 
   /**
@@ -64,9 +68,10 @@ export class HTTPRequestService {
    * @param url URL to call
    * @param params parameters such as  HttpParams, reportProgress etc.
    * @param headers
+   * @param responseType
    */
-  public delete(url: string, params?: any, headers?: HttpHeaders): Observable<any> {
-    return this.invoke('DELETE', url, null, params, headers);
+  public delete(url: string, params?: any, headers?: HttpHeaders, responseType?: any): Observable<any> {
+    return this.invoke('DELETE', url, null, params, headers, responseType);
   }
 
   private invoke(
