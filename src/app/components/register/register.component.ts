@@ -65,32 +65,22 @@ export class RegisterComponent implements OnInit {
                 duration: 2000,
                 panelClass: ['warn-snackBar']
               })
-              // }
             }
           });
       } else {
         this.snackBar.open("Password doesn't match!", "close", {
-            duration: 2000,
-            panelClass: ['warn-snackBar']
-          }
-        )
+          duration: 2000,
+          panelClass: ['warn-snackBar']
+        })
       }
     } else {
-      this
-        .snackBar
-        .open(
-          "Please complete the form."
-          ,
-          "close"
-          , {
-            duration: 2000
-            ,
-            panelClass: ['warn-snackBar']
-          }
-        )
+      this.snackBar.open("Please complete the form.", "close", {
+        duration: 2000,
+        panelClass: ['warn-snackBar']
+      })
     }
   }
-  
+
   isValid() {
     return !!this.registerForm.controls['firstname'].value &&
       !!this.registerForm.controls['lastname'].value &&
