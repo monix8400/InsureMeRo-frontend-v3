@@ -74,10 +74,17 @@ export class RegisterComponent implements OnInit {
         })
       }
     } else {
-      this.snackBar.open("Please complete the form.", "close", {
-        duration: 2000,
-        panelClass: ['warn-snackBar']
-      })
+      if (!this.registerForm.controls["password"].valid) {
+        this.snackBar.open("Your password must be at least 6 characters long.", "close", {
+          duration: 2000,
+          panelClass: ['warn-snackBar']
+        })
+      } else {
+        this.snackBar.open("Please complete the form.", "close", {
+          duration: 2000,
+          panelClass: ['warn-snackBar']
+        })
+      }
     }
   }
 

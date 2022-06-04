@@ -34,22 +34,28 @@ export class LoginComponent implements OnInit {
   }
 
   login(user: User) {
-    console.log(this.loginForm);
-    this.loginService.login(user.email, user.password).subscribe({
-      next: (data) => {
-        console.log(data)
-        localStorage.setItem("accessToken", data.accessToken)
-        this.snackBar.open("Login succeeded!", "close", {
+    if (this.loginForm.valid) {
+      this.loginService.login(user.email, user.password).subscribe({
+        next: (data) => {
+          console.log(data)
+          localStorage.setItem("accessToken", data.accessToken)
+          this.snackBar.open("Login succeeded!", "close", {
+            duration: 2000,
+            panelClass: ['primary-snackBar']
+          })
+          this.router.navigate(['/auth-home']).then(r => console.log(r));
+        },
+        error: () => this.snackBar.open("Login failed!", "close", {
           duration: 2000,
-          panelClass: ['primary-snackBar']
+          panelClass: ['warn-snackBar']
         })
-        this.router.navigate(['/auth-home']).then(r => console.log(r));
-      },
-      error: () => this.snackBar.open("Login failed!", "close", {
+      });
+    } else {
+      this.snackBar.open("Please insert valid information", "close", {
         duration: 2000,
         panelClass: ['warn-snackBar']
       })
-    });
+    }
   }
 
 
