@@ -5,12 +5,13 @@ label {
 }
 
 .expired {
-  mat-card{
+  mat-card {
     margin-bottom: 0;
     border: 2px solid $Warn;
   }
 }
-p{
+
+p {
   margin-right: 16px;
   color: $Warn;
   font-size: 12px;

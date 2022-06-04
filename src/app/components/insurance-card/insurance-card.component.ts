@@ -6,7 +6,7 @@ import * as moment from "moment";
   templateUrl: './insurance-card.component.html',
   styleUrls: ['./insurance-card.component.scss']
 })
-export class InsuranceCardComponent implements OnInit,AfterViewInit {
+export class InsuranceCardComponent implements OnInit, AfterViewInit {
   @Input() insurance: any;
   isExpired: boolean = false;
   @ViewChild('insuranceCard') insuranceCard!: ElementRef;
@@ -23,7 +23,7 @@ export class InsuranceCardComponent implements OnInit,AfterViewInit {
     // console.log(this.isExpired);
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     if (this.isExpired) {
       this.renderer.addClass(this.insuranceCard.nativeElement, "expired")
     } else {

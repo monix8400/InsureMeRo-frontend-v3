@@ -1,9 +1,12 @@
 <form [formGroup]="vehicleForm" (ngSubmit)="onNext()">
   <div class="row">
+
     <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
       <mat-label>Registration Number</mat-label>
       <input type="text" matInput placeholder="Registration Nr" formControlName="registrationNr" required>
+      <!--      <mat-icon matSuffix matTooltip="You can find it at X/Y position in the registration certificate.">help_outline</mat-icon>-->
     </mat-form-field>
+
     <mat-form-field appearance="outline" color="accent" class="col-12 col-md-3">
       <mat-label>Category</mat-label>
       <input type="text" matInput placeholder="Category" formControlName="categoryCode" required>
@@ -14,10 +17,15 @@
     <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
       <mat-label>Make</mat-label>
       <input type="text" matInput placeholder="Make" formControlName="make" required>
+      <mat-icon matSuffix matTooltip="You can find it at position D1 in the registration certificate.">help_outline
+      </mat-icon>
     </mat-form-field>
+
     <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
       <mat-label>Model</mat-label>
       <input type="text" matInput placeholder="Model" formControlName="model" required>
+      <mat-icon matSuffix matTooltip="You can find it at position D3 in the registration certificate.">help_outline
+      </mat-icon>
     </mat-form-field>
   </div>
 
@@ -26,9 +34,12 @@
       <mat-label>Fuel Type</mat-label>
       <input type="text" matInput placeholder="Fuel Type" formControlName="fuelType" required>
     </mat-form-field>
+
     <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
       <mat-label>Chassis Series</mat-label>
       <input type="text" matInput placeholder="Chassis Series" formControlName="chassisSeries" required>
+      <mat-icon matSuffix matTooltip="You can find it at position E in the registration certificate.">help_outline
+      </mat-icon>
     </mat-form-field>
   </div>
 
@@ -36,10 +47,15 @@
     <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
       <mat-label>CIV Series</mat-label>
       <input type="text" matInput placeholder="CIV Series" formControlName="civseries" required>
+      <mat-icon matSuffix matTooltip="You can find it at position X/Y in the registration certificate.">help_outline
+      </mat-icon>
     </mat-form-field>
+
     <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
       <mat-label>Year of Manufacture</mat-label>
       <input type="text" matInput placeholder="Year of Manufacture" formControlName="yearOfManufacture" required>
+      <mat-icon matSuffix matTooltip="You can find it at position B in the registration certificate.">help_outline
+      </mat-icon>
     </mat-form-field>
   </div>
 
@@ -47,10 +63,15 @@
     <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
       <mat-label>Cylindrical Capacity</mat-label>
       <input type="text" matInput placeholder="Cylindrical Capacity" formControlName="cylindricalCapacity" required>
+      <mat-icon matSuffix matTooltip="You can find it at position P1 in the registration certificate.">help_outline
+      </mat-icon>
     </mat-form-field>
+
     <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
       <mat-label>Maximal Net Power</mat-label>
       <input type="text" matInput placeholder="Maximal Net Power" formControlName="maxNetPower" required>
+      <mat-icon matSuffix matTooltip="You can find it at position P2 in the registration certificate.">help_outline
+      </mat-icon>
     </mat-form-field>
   </div>
 
@@ -58,16 +79,22 @@
     <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
       <mat-label>Maximal Total Mass</mat-label>
       <input type="text" matInput placeholder="Maximal Total Mass" formControlName="maxTotalMass" required>
+      <mat-icon matSuffix matTooltip="You can find it at position F1 in the registration certificate.">help_outline
+      </mat-icon>
     </mat-form-field>
+
     <mat-form-field appearance="outline" color="accent" class="form-group col-12 col-md-3">
       <mat-label>Seats Nr</mat-label>
       <input type="text" matInput placeholder="Seats Nr" formControlName="seatsNr" required>
+      <mat-icon matSuffix matTooltip="You can find it at position S1 in the registration certificate.">help_outline
+      </mat-icon>
     </mat-form-field>
   </div>
 
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
-      <button mat-raised-button matStepperNext type="submit" color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;">next
+      <button mat-raised-button matStepperNext type="submit" color="primary"
+              style="padding: 0.5rem 3rem; font-size: 1rem;">next
       </button>
     </div>
   </div>

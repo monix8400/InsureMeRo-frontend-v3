@@ -49,6 +49,7 @@ import {PersonalInfoDialogComponent} from './components/personal-info-dialog/per
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {InsuranceCardComponent} from './components/insurance-card/insurance-card.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 @NgModule({
@@ -78,29 +79,30 @@ import {InsuranceCardComponent} from './components/insurance-card/insurance-card
     InsuranceCardComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatMenuModule,
-    NgChartsModule,
-    MatSidenavModule,
-    MatListModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    MatRadioModule,
-    MatStepperModule,
-    MatDatepickerModule,
-    MatMomentDateModule,
-    MatDialogModule,
-    FormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MatCardModule,
+        MatToolbarModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatMenuModule,
+        NgChartsModule,
+        MatSidenavModule,
+        MatListModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        MatRadioModule,
+        MatStepperModule,
+        MatDatepickerModule,
+        MatMomentDateModule,
+        MatDialogModule,
+        FormsModule,
+        MatTooltipModule,
+    ],
   providers: [HTTPRequestService, {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {strict: true}}, MatSnackBar],
   bootstrap: [AppComponent]
 })
