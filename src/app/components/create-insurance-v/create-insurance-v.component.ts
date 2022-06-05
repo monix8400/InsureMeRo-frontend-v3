@@ -1,5 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {FormGroup} from "@angular/forms";
 import {Vehicle} from "../../models/vehicle";
 
 @Component({
@@ -8,20 +8,8 @@ import {Vehicle} from "../../models/vehicle";
   styleUrls: ['./create-insurance-v.component.scss']
 })
 export class CreateInsuranceVComponent implements OnInit {
-  vehicleForm = new FormGroup({
-    registrationNr: new FormControl(),
-    categoryCode: new FormControl(),
-    make: new FormControl(),
-    model: new FormControl(),
-    fuelType: new FormControl(),
-    chassisSeries: new FormControl(),
-    civseries: new FormControl(),
-    yearOfManufacture: new FormControl(),
-    cylindricalCapacity: new FormControl(),
-    maxNetPower: new FormControl(),
-    maxTotalMass: new FormControl(),
-    seatsNr: new FormControl(),
-  });
+  @Input()
+  vehicleForm: FormGroup = new FormGroup({});
 
   @Output() sendVehicleInformation = new EventEmitter<Vehicle>();
 

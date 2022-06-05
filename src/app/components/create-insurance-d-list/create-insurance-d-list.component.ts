@@ -1,4 +1,4 @@
-import {Component, ComponentRef, EventEmitter, OnInit, Output, ViewChild, ViewContainerRef} from '@angular/core';
+import {Component, ComponentRef, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef} from '@angular/core';
 import {CreateInsuranceDComponent} from "../create-insurance-d/create-insurance-d.component";
 import {FormArray, FormGroup} from "@angular/forms";
 
@@ -12,9 +12,8 @@ export class CreateInsuranceDListComponent implements OnInit {
   container!: ViewContainerRef;
   component!: ComponentRef<CreateInsuranceDComponent>;
 
-  driversForm = new FormGroup({
-    drivers: new FormArray([]),
-  });
+  @Input()
+  driversForm: FormGroup = new FormGroup({});
 
   @Output() sendDriversList = new EventEmitter<any>();
   result: any;
@@ -27,7 +26,7 @@ export class CreateInsuranceDListComponent implements OnInit {
 
   addDriver() {
     this.component = this.container.createComponent(CreateInsuranceDComponent);
-    this.component.instance.sendDriver.subscribe((val)=>this.deleteDriver(val))
+    this.component.instance.sendDriver.subscribe((val) => this.deleteDriver(val))
 
     console.log(this.container.length)
     let drivers = this.driversForm.controls["drivers"] as FormArray;
@@ -38,7 +37,7 @@ export class CreateInsuranceDListComponent implements OnInit {
     this.sendDriversList.emit(this.driversForm.getRawValue())
   }
 
-  deleteDriver(indexDriver : number) {
+  deleteDriver(indexDriver: number) {
     let drivers = this.driversForm.controls["drivers"] as FormArray;
     drivers.removeAt(indexDriver)
   }

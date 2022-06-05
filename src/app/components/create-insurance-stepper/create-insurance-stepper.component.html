@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-content>
-    <mat-stepper labelPosition="bottom" #stepper linear>
+    <mat-stepper labelPosition="bottom" [linear]="true">
       <mat-step [stepControl]="personTypeForm">
         <ng-template matStepLabel>Person-type</ng-template>
         <mat-card-title class="d-flex justify-content-center">Choose the type of person:</mat-card-title>
@@ -15,28 +15,28 @@
         </div>
       </mat-step>
 
-      <mat-step *ngIf="personTypeI">
+      <mat-step *ngIf="personTypeI" [stepControl]="personalInfoIForm">
         <ng-template matStepLabel>Personal Information</ng-template>
         <mat-card-title class="d-flex justify-content-center">Complete your personal information:</mat-card-title>
-        <create-insurance-pi-i (sendPersonInformation)="onClickSendPI($event)"></create-insurance-pi-i>
+        <create-insurance-pi-i [personalInfoForm]="personalInfoIForm" (sendPersonInformation)="onClickSendPI($event)"></create-insurance-pi-i>
       </mat-step>
 
-      <mat-step *ngIf="!personTypeI">
-        <ng-template matStepLabel>Personal Information</ng-template>
-        <mat-card-title class="d-flex justify-content-center">Complete your personal information:</mat-card-title>
-        <create-insurance-pi-l (sendPersonInformation)="onClickSendPI($event)"></create-insurance-pi-l>
+      <mat-step *ngIf="!personTypeI" [stepControl]="personalInfoLPForm">
+        <ng-template matStepLabel>Organizational Information</ng-template>
+        <mat-card-title class="d-flex justify-content-center">Complete your organizational information:</mat-card-title>
+        <create-insurance-pi-l [personalInfoForm]="personalInfoLPForm" (sendPersonInformation)="onClickSendPI($event)"></create-insurance-pi-l>
 
       </mat-step>
-      <mat-step>
+      <mat-step [stepControl]="vehicleForm">
         <ng-template matStepLabel>Vehicle Information</ng-template>
         <mat-card-title class="d-flex justify-content-center">Complete your vehicle information:</mat-card-title>
-        <create-insurance-v (sendVehicleInformation)="onClickSendVI($event)"></create-insurance-v>
+        <create-insurance-v [vehicleForm]="vehicleForm" (sendVehicleInformation)="onClickSendVI($event)"></create-insurance-v>
       </mat-step>
 
-      <mat-step>
+      <mat-step [stepControl]="driversForm">
         <ng-template matStepLabel>Drivers</ng-template>
         <mat-card-title class="d-flex justify-content-center">Add other drivers?</mat-card-title>
-        <create-insurance-d-list (sendDriversList)="onClickSendDL($event)"></create-insurance-d-list>
+        <create-insurance-d-list [driversForm]="driversForm" (sendDriversList)="onClickSendDL($event)"></create-insurance-d-list>
       </mat-step>
 
       <mat-step>

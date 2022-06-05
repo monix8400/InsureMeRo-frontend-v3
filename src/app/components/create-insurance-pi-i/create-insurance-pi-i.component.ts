@@ -1,5 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {FormGroup} from "@angular/forms";
 import {PersonalInfo} from "../../models/personalInfo";
 import {MatDialog} from "@angular/material/dialog";
 import {PersonalInfoDialogComponent} from "../personal-info-dialog/personal-info-dialog.component";
@@ -10,20 +10,8 @@ import {PersonalInfoDialogComponent} from "../personal-info-dialog/personal-info
   styleUrls: ['./create-insurance-pi-i.component.scss']
 })
 export class CreateInsurancePiIComponent implements OnInit {
-  personalInfoForm = new FormGroup({
-    firstname: new FormControl(),
-    lastname: new FormControl(),
-    identityCardSeries: new FormControl(),
-    identityCardNr: new FormControl(),
-    code: new FormControl(),
-    address: new FormGroup({
-      city: new FormControl(),
-      county: new FormControl(),
-      street: new FormControl(),
-      number: new FormControl(),
-      zipCode: new FormControl()
-    }),
-  });
+  @Input()
+  personalInfoForm: FormGroup = new FormGroup({});
 
   @Output() sendPersonInformation = new EventEmitter<PersonalInfo>();
 
@@ -49,8 +37,8 @@ export class CreateInsurancePiIComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(result.data)
-      if (result.data!=="Cancel") {
-        let name=result.data.personalInfo.name;
+      if (result.data !== "Cancel") {
+        let name = result.data.personalInfo.name;
 
         this.personalInfoForm.controls["lastname"].setValue(name.split(" ")[1]);
         this.personalInfoForm.controls["firstname"].setValue(name.split(" ")[0]);

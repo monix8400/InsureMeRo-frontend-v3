@@ -1,5 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {FormGroup} from "@angular/forms";
 import {PersonalInfo} from "../../models/personalInfo";
 
 @Component({
@@ -8,17 +8,8 @@ import {PersonalInfo} from "../../models/personalInfo";
   styleUrls: ['./create-insurance-pi-l.component.scss']
 })
 export class CreateInsurancePiLComponent implements OnInit {
-  personalInfoForm = new FormGroup({
-    name: new FormControl(),
-    identificationNr: new FormControl(),
-    address: new FormGroup({
-      city: new FormControl(),
-      county: new FormControl(),
-      street: new FormControl(),
-      number: new FormControl(),
-      zip: new FormControl(),
-    }),
-  });
+  @Input()
+  personalInfoForm: FormGroup = new FormGroup({});
 
   @Output() sendPersonInformation = new EventEmitter<PersonalInfo>();
 
