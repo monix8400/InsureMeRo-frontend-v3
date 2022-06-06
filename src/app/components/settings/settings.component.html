@@ -1,9 +1,9 @@
 <mat-card>
   <mat-card-title>
-    <p>settings works!</p>
+    <p>Settings</p>
   </mat-card-title>
-<!--  <span>Edit password?</span>-->
   <mat-card-content>
-    <button mat-raised-button color="primary" (click)="deleteAccount()">Delete Account</button>
+    <button mat-raised-button color="primary" (click)="$event"><mat-icon>edit</mat-icon> Edit password</button>
+    <button mat-raised-button color="primary" (click)="deleteAccount()"><mat-icon>delete</mat-icon> Delete Account</button>
   </mat-card-content>
 </mat-card>

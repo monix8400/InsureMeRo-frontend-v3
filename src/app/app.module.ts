@@ -26,7 +26,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatMenuModule} from "@angular/material/menu";
 import {NgChartsModule} from 'ng2-charts';
-import {AccountInfoComponent} from './components/account-info/account-info.component';
+import {SavedAccountInfoComponent} from './components/saved-account-info/saved-account-info.component';
 import {DisplayInsurancesComponent} from './components/display-insurances/display-insurances.component';
 import {SettingsComponent} from './components/settings/settings.component';
 import {UserInfoComponent} from './components/user-info/user-info.component';
@@ -50,6 +50,11 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {InsuranceCardComponent} from './components/insurance-card/insurance-card.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatTabsModule} from "@angular/material/tabs";
+import { DisplayPiIComponent } from './components/display-pi-i/display-pi-i.component';
+import { DisplayPiLComponent } from './components/display-pi-l/display-pi-l.component';
+import { DisplayVComponent } from './components/display-v/display-v.component';
+import { OrganizationalInfoDialogComponent } from './components/organizational-info-dialog/organizational-info-dialog.component';
 
 
 @NgModule({
@@ -66,7 +71,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     CreateInsurancePiLComponent,
     CreateInsuranceVComponent,
     CreateInsuranceDComponent,
-    AccountInfoComponent,
+    SavedAccountInfoComponent,
     DisplayInsurancesComponent,
     SettingsComponent,
     UserInfoComponent,
@@ -77,32 +82,37 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     ShowInsurancePriceComponent,
     PersonalInfoDialogComponent,
     InsuranceCardComponent,
+    DisplayPiIComponent,
+    DisplayPiLComponent,
+    DisplayVComponent,
+    OrganizationalInfoDialogComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        MatCardModule,
-        MatToolbarModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        MatMenuModule,
-        NgChartsModule,
-        MatSidenavModule,
-        MatListModule,
-        ReactiveFormsModule,
-        MatIconModule,
-        MatRadioModule,
-        MatStepperModule,
-        MatDatepickerModule,
-        MatMomentDateModule,
-        MatDialogModule,
-        FormsModule,
-        MatTooltipModule,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatMenuModule,
+    NgChartsModule,
+    MatSidenavModule,
+    MatListModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatRadioModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatDialogModule,
+    FormsModule,
+    MatTooltipModule,
+    MatTabsModule,
+  ],
   providers: [HTTPRequestService, {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {strict: true}}, MatSnackBar],
   bootstrap: [AppComponent]
 })

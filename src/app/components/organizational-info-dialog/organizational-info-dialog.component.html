@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Choose from your existing organizational information:</h1>
+<div mat-dialog-content>
+  <div *ngIf="organizationalInfoList?.length" #items>
+    <ng-template ngFor let-item [ngForOf]="organizationalInfoList" let-i="index">
+      <mat-card class="personal-info-card" (click)='onSelect(item,i)' id="item{{i}}">
+        <mat-card-content>
+          <h3>
+            <div class="row">
+              <div class="col-md-6 col-12">
+                <label>Person Type:</label> {{item["personalInfo"]["personType"]}}
+                <br>
+                <label>Name:</label> {{item["personalInfo"]["name"]}}
+                <br>
+                <label>Code:</label> {{item["personalInfo"]["code"]}}
+                <br>
+              </div>
+              <div class="col-md-6 col-12">
+                <label>County:</label> {{item["address"]["county"]}}
+                <br>
+                <label>City:</label> {{item["address"]["city"]}}
+                <br>
+                <label>Street:</label> {{item["address"]["street"]}}
+                <br>
+                <label>Number:</label> {{item["address"]["number"]}}
+                <br>
+                <label>ZIP Code:</label> {{item["address"]["zipCode"]}}
+              </div>
+            </div>
+          </h3>
+        </mat-card-content>
+      </mat-card>
+    </ng-template>
+  </div>
+  <div *ngIf="!organizationalInfoList?.length">
+    <h2 style="color: white; margin: 1rem;">You don't have any Info saved :(</h2>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onClick()">Select</button>
+</div>
+

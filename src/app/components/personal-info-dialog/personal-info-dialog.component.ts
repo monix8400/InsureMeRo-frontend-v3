@@ -3,7 +3,7 @@ import {MatDialogRef} from "@angular/material/dialog";
 import {PersonalInfoService} from "../../services/personal-info.service";
 
 @Component({
-  selector: 'app-personal-info-dialog',
+  selector: 'personal-info-dialog',
   templateUrl: './personal-info-dialog.component.html',
   styleUrls: ['./personal-info-dialog.component.scss']
 })
@@ -21,9 +21,10 @@ export class PersonalInfoDialogComponent implements OnInit {
   }
 
   getPersonalInfoForCurrentUser() {
-    this.personalInfoService.getPersonalInfoForCurrentUser().subscribe((data) => {
+    this.personalInfoService.getPersonalInfoForCurrentUser(0).subscribe((data) => {
       this.personalInfoList = data;
-      console.log(data)
+      console.log("indiv: ")
+      console.log(this.personalInfoList)
     });
   }
 

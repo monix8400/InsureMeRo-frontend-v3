@@ -1,28 +1,41 @@
 <mat-card>
   <mat-card-title class="d-flex justify-content-between align-items-center">
-    <p>user-info works!</p>
-    <button mat-button (click)="$event">
-      <mat-icon>edit</mat-icon>
-    </button>
+    <p>User Account Information</p>
   </mat-card-title>
   <mat-card-content>
     <div class="row">
-      <!--      <div class="col-6">-->
       <mat-form-field appearance="outline" color="accent">
         <mat-label>Last Name</mat-label>
-        <input type="text" matInput disabled placeholder="Last Name" value="{{getLastname()}}">
+        <input type="text" matInput #lastname [disabled]="!isEditableLastName" placeholder="Last Name"
+               value="{{getLastname()}}">
+        <button mat-icon-button matSuffix (click)="saveNewLastname(lastname.value)">
+          <mat-icon color="{{isEditableLastName? 'accent': '#fff'}}">{{isEditableLastName ? 'done' : 'edit'}}</mat-icon>
+        </button>
+        <button *ngIf="isEditableLastName" mat-icon-button matSuffix (click)="closeLastname()">
+          <mat-icon color="warn">close</mat-icon>
+        </button>
       </mat-form-field>
-      <!--      </div>-->
-      <!--      <div class="col-6">-->
       <mat-form-field appearance="outline" color="accent">
         <mat-label>First Name</mat-label>
-        <input type="text" matInput disabled placeholder="First Name" value="{{getFirstname()}}">
+        <input type="text" matInput #firstname [disabled]="!isEditableFirstName" placeholder="First Name"
+               value="{{getFirstname()}}">
+        <button mat-icon-button matSuffix (click)="saveNewFirstname(firstname.value)">
+          <mat-icon color="{{isEditableFirstName? 'accent': '#fff'}}">{{isEditableFirstName ? 'done' : 'edit'}}</mat-icon>
+        </button>
+        <button *ngIf="isEditableFirstName" mat-icon-button matSuffix (click)="closeFirstname()">
+          <mat-icon color="warn">close</mat-icon>
+        </button>
       </mat-form-field>
-      <!--      </div>-->
 
       <mat-form-field appearance="outline" color="accent">
         <mat-label>Email</mat-label>
-        <input type="email" matInput disabled placeholder="Email" value="{{getEmail()}}">
+        <input type="email" #email matInput [disabled]="!isEditableEmail" placeholder="Email" value="{{getEmail()}}">
+        <button mat-icon-button matSuffix (click)="saveNewEmail(email.value)">
+          <mat-icon color="{{isEditableEmail? 'accent': '#fff'}}">{{isEditableEmail ? 'done' : 'edit'}}</mat-icon>
+        </button>
+        <button *ngIf="isEditableEmail" mat-icon-button matSuffix (click)="closeEmail()">
+          <mat-icon color="warn">close</mat-icon>
+        </button>
       </mat-form-field>
     </div>
   </mat-card-content>

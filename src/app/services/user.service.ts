@@ -17,7 +17,7 @@ export class UserService {
   }
 
   getUsers() {
-    return this.httpRequestService.get('user/getUsers');
+    return this.httpRequestService.get('user/getUsers', null, this.headers);
   }
 
   deleteUserById(id: number) {

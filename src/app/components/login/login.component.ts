@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.loginService.login(user.email, user.password).subscribe({
         next: (data) => {
-          console.log(data)
+          // console.log(data)
           localStorage.setItem("accessToken", data.accessToken)
           this.snackBar.open("Login succeeded!", "close", {
             duration: 2000,

@@ -16,8 +16,6 @@ export class AuthenticationService {
       .set('username', email)
       .set('password', password);
     const result = Object.fromEntries(map);
-    console.log(result)
-
     return this.httpRequestService.post('login', result, null, undefined);
   }
 

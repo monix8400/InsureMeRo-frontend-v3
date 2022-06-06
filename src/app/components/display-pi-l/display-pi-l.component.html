@@ -1,0 +1,40 @@
+<div *ngIf="personalInfoList?.length" class="row" style="margin: 0">
+  <ng-template ngFor let-item [ngForOf]="personalInfoList" let-i="index">
+    <div class="col-12">
+      <mat-card class="personal-info-card" id="item{{i}}">
+        <mat-card-content>
+          <h3>
+            <div class="row">
+              <div class="col-md-6 col-12">
+                <label>Person Type:</label> {{item["personalInfo"]["personType"]}}
+                <br>
+                <label>Name:</label> {{item["personalInfo"]["name"]}}
+                <br>
+                <label>Identity Card Series:</label> {{item["personalInfo"]["identityCardSeries"]}}
+                <br>
+                <label>Identity Card Number:</label> {{item["personalInfo"]["identityCardNr"]}}
+                <br>
+                <label>Code:</label> {{item["personalInfo"]["code"]}}
+                <br>
+              </div>
+              <div class="col-md-6 col-12">
+                <label>County:</label> {{item["address"]["county"]}}
+                <br>
+                <label>City:</label> {{item["address"]["city"]}}
+                <br>
+                <label>Street:</label> {{item["address"]["street"]}}
+                <br>
+                <label>Number:</label> {{item["address"]["number"]}}
+                <br>
+                <label>ZIP Code:</label> {{item["address"]["zipCode"]}}
+              </div>
+            </div>
+          </h3>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-template>
+</div>
+<div *ngIf="!personalInfoList?.length">
+  <h3 style="color: white; margin: 1rem;">You don't have any Insurances :(</h3>
+</div>

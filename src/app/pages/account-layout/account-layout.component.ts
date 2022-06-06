@@ -9,8 +9,8 @@ export class AccountLayoutComponent implements OnInit {
 
   menu = [
     {icon:"person",label: 'User Information', routerLink: ['/profile']},
-    {icon:"badge",label: 'Account Information', routerLink: ['account-info']},
-    {icon:"settings",label: 'Settings', routerLink: ['settings']}
+    {icon:"badge",label: 'Saved Information', routerLink: ['saved-account-info']},
+    // {icon:"settings",label: 'Settings', routerLink: ['settings']}
   ];
 
   constructor() {

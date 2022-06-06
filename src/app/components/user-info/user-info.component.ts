@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {User} from "../../models/user";
 
@@ -12,6 +12,13 @@ export class UserInfoComponent implements OnInit {
   email: any;
   firstname: any;
   lastname: any;
+  isEditableLastName = false;
+  isEditableFirstName = false;
+  isEditableEmail = false;
+
+  @ViewChild('lastname') lastnameInput!: ElementRef
+  @ViewChild('firstname') firstnameInput!: ElementRef
+  @ViewChild('email') emailInput!: ElementRef
 
   constructor(private userService: UserService) {
   }
@@ -36,5 +43,50 @@ export class UserInfoComponent implements OnInit {
 
   getLastname() {
     return this.lastname = this.user.lastname;
+  }
+
+  saveNewLastname(value: string) {
+    if (this.isEditableLastName) {
+      this.lastname = value;
+      console.log(this.lastname)
+      this.isEditableLastName = false;
+    } else {
+      this.isEditableLastName = true;
+    }
+  }
+
+  saveNewFirstname(value: string) {
+    if (this.isEditableFirstName) {
+      this.firstname = value;
+      console.log(this.firstname)
+      this.isEditableFirstName = false;
+    } else {
+      this.isEditableFirstName = true;
+    }
+  }
+
+  saveNewEmail(value: string) {
+    if (this.isEditableEmail) {
+      this.email = value;
+      console.log(this.email);
+      this.isEditableEmail = false;
+    } else {
+      this.isEditableEmail = true;
+    }
+  }
+
+  closeEmail() {
+    this.emailInput.nativeElement.value = this.user.email
+    this.isEditableEmail = false;
+  }
+
+  closeFirstname() {
+    this.firstnameInput.nativeElement.value = this.user.firstname
+    this.isEditableFirstName = false;
+  }
+
+  closeLastname() {
+    this.lastnameInput.nativeElement.value = this.user.lastname
+    this.isEditableLastName = false;
   }
 }

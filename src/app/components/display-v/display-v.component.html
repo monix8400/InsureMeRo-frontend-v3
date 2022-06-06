@@ -1,0 +1,44 @@
+<div *ngIf="insurances?.length" class="row" style="margin: 0">
+  <ng-template ngFor let-item [ngForOf]="insurances" let-i="index">
+    <div class="col-md-6 col-12">
+      <mat-card class="personal-info-card" id="item{{i}}">
+        <mat-card-content>
+          <h3>
+            <div class="row">
+              <div class="col-md-6 col-12">
+                <label>Registration Number: </label> {{item["vehicle"]["registrationNr"]}}
+                <br>
+                <label>Category: </label> {{item["vehicle"]["categoryCode"]}}
+                <br>
+                <label>Make: </label> {{item["vehicle"]["make"]}}
+                <br>
+                <label>Model: </label> {{item["vehicle"]["model"]}}
+                <br>
+                <label>Fuel Type: </label> {{item["vehicle"]["fuelType"]}}
+                <br>
+                <label>Chassis Series: </label> {{item["vehicle"]["chassisSeries"]}}
+                <br>
+              </div>
+              <div class="col-md-6 col-12">
+                <label>CIV Series: </label> {{item["vehicle"]["civseries"]}}
+                <br>
+                <label>Year of Manufacture: </label> {{item["vehicle"]["yearOfManufacture"]}}
+                <br>
+                <label>Cylindrical Capacity: </label> {{item["vehicle"]["cylindricalCapacity"]}}
+                <br>
+                <label>Maximal Net Power: </label> {{item["vehicle"]["maxNetPower"]}}
+                <br>
+                <label>Maximal Total Mass: </label> {{item["vehicle"]["maxTotalMass"]}}
+                <br>
+                <label>Seats Nr: </label> {{item["vehicle"]["seatsNr"]}}
+              </div>
+            </div>
+          </h3>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-template>
+</div>
+<div *ngIf="!insurances?.length">
+  <h3 style="color: white; margin: 1rem;">You don't have any Insurances :(</h3>
+</div>

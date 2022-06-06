@@ -1,7 +1,7 @@
 <form [formGroup]="personalInfoForm" (ngSubmit)="onNext()">
   <div class="row">
     <div class="col-12  d-flex justify-content-center">
-      <button mat-raised-button color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;">Use your info from
+      <button mat-raised-button (click)="openDialog()" color="primary" style="padding: 0.5rem 3rem; font-size: 1rem;">Use your info from
         your Profile
       </button>
     </div>

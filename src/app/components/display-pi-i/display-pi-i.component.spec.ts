@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccountInfoComponent } from './account-info.component';
+import { DisplayPiIComponent } from './display-pi-i.component';
 
-describe('AccountInfoComponent', () => {
-  let component: AccountInfoComponent;
-  let fixture: ComponentFixture<AccountInfoComponent>;
+describe('DisplayPiIComponent', () => {
+  let component: DisplayPiIComponent;
+  let fixture: ComponentFixture<DisplayPiIComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AccountInfoComponent ]
+      declarations: [ DisplayPiIComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AccountInfoComponent);
+    fixture = TestBed.createComponent(DisplayPiIComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

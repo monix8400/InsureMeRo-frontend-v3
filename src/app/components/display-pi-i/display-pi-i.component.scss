@@ -1,0 +1,15 @@
+@import "./src/variables";
+
+label{
+  color: $Accent;
+}
+
+$cardBorderColor: #363636;
+
+.personal-info-card {
+  background-color: $Background;
+  border: 2px solid $cardBorderColor;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 200px;
+}

@@ -24,7 +24,7 @@ export class InsuranceService {
   }
 
   getInsurancePdf(id: number) {
-    return this.httpRequestService.get('insurance/getInsurancePdf/' + id);
+    return this.httpRequestService.get('insurance/getInsurancePdf/' + id,null,this.headers,'blob');
   }
 
   getInsuranceById(id: number) {

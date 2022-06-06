@@ -10,8 +10,8 @@
         <label>Vehicle:</label> {{insurance["vehicle"]["make"] + " " + insurance["vehicle"]["model"]}}
         <br>
         <label>Expire date:</label> {{insurance["insurance"]["validTo"]}}
-
       </h3>
+      <button mat-stroked-button (click)="seeInsurance(insurance['insurance'])">see insurance</button>
     </mat-card-content>
   </mat-card>
   <p>

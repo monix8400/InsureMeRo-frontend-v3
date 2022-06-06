@@ -11,8 +11,9 @@ export class PersonalInfoService {
   constructor(private httpRequestService: HTTPRequestService) {
   }
 
-  getPersonalInfoForCurrentUser() {
-    return this.httpRequestService.get('insurance/getPersonalInfoForCurrentUser', null, this.headers);
+  getPersonalInfoForCurrentUser(personType: number) {
+    console.log(personType)
+    return this.httpRequestService.get('insurance/getPersonalInfoForCurrentUser/' + personType, null, this.headers);
   }
 
   getPersonalInfoById(id: number) {

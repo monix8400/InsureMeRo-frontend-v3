@@ -8,7 +8,7 @@ import {AuthHomeComponent} from "./components/auth-home/auth-home.component";
 import {AccountLayoutComponent} from "./pages/account-layout/account-layout.component";
 import {DisplayInsurancesComponent} from "./components/display-insurances/display-insurances.component";
 import {UserInfoComponent} from "./components/user-info/user-info.component";
-import {AccountInfoComponent} from "./components/account-info/account-info.component";
+import {SavedAccountInfoComponent} from "./components/saved-account-info/saved-account-info.component";
 import {SettingsComponent} from "./components/settings/settings.component";
 import {AuthGuard} from "./services/auth.guard";
 import {
@@ -65,8 +65,8 @@ const routes: Routes = [
           children:
             [
               {path: '', component: UserInfoComponent},
-              {path: 'account-info', component: AccountInfoComponent},
-              {path: 'settings', component: SettingsComponent}
+              {path: 'saved-account-info', component: SavedAccountInfoComponent},
+              // {path: 'settings', component: SettingsComponent}
             ]
         }
       ]

@@ -4,9 +4,7 @@
       <ng-template ngFor let-item [ngForOf]="menu" let-i="index">
         <a routerLink="{{item.routerLink}}">
           <mat-list-item>
-            <mat-icon>
-              {{item.icon}}
-            </mat-icon>
+            <mat-icon>{{item.icon}}</mat-icon>
             {{item.label}}
           </mat-list-item>
         </a>

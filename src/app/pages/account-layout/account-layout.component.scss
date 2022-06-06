@@ -1,9 +1,13 @@
 @import "./src/variables";
 
-.sidenav{
+.sidenav {
   height: 100%;
 }
-mat-icon{
+
+mat-icon {
   color: $Primary;
   margin-right: 0.5rem;
+}
+.mat-sidenav-content{
+  overflow: unset;
 }

@@ -4,11 +4,12 @@
     <span class="spacer"></span>
     <button mat-button [matMenuTriggerFor]="menu">
       <div class="user">
-      <div class="avatar">
-        {{getInitials()}}
-      </div>
-      <div class="full-name">
-      {{getUserName()}}</div>
+        <div class="avatar">
+          {{getInitials()}}
+        </div>
+        <div class="full-name">
+          {{getUserName()}}
+        </div>
       </div>
     </button>
     <mat-menu #menu="matMenu">
