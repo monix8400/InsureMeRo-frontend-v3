@@ -33,7 +33,6 @@ export class InsuranceCardComponent implements OnInit, AfterViewInit {
 
   seeInsurance(insuranceElement: any) {
     let insuranceId = insuranceElement.id;
-    console.log(insuranceId)
     this.insuranceService.getInsurancePdf(insuranceId).subscribe({
       next: (data)=>{
         let file = new Blob([data], {type: 'application/pdf'})
