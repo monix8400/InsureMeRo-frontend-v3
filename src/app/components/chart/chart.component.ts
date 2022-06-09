@@ -15,7 +15,7 @@ export class ChartComponent {
     datasets: [
       {
         data: [65, 59, 80, 81, 56, 55, 40],
-        label: 'Series A',
+        label: 'Individual',
         backgroundColor: 'rgba(123,31,162,0.2)',
         borderColor: 'rgba(123,31,162,1)',
         pointBackgroundColor: 'rgba(123,31,162,1)',
@@ -26,7 +26,7 @@ export class ChartComponent {
       },
       {
         data: [28, 48, 40, 19, 86, 27, 90],
-        label: 'Series B',
+        label: 'Legal Person',
         backgroundColor: 'rgba(105,240,174,0.2)',
         borderColor: 'rgba(105,240,174,1)',
         pointBackgroundColor: 'rgba(105,240,174,1)',

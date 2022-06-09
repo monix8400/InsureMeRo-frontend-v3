@@ -27,4 +27,16 @@ export class UserService {
   getCurrentUser() {
     return this.httpRequestService.get('user/user', null, this.headers);
   }
+
+  updateUserFirstname(firstname: any) {
+    return this.httpRequestService.post('user/updateFirstname', firstname, null, this.headers)
+  }
+
+  updateUserLastname(lastname: any) {
+    return this.httpRequestService.post('user/updateLastname', lastname, null, this.headers)
+  }
+
+  updateUserEmail(email: any) {
+    return this.httpRequestService.post('user/updateEmail', email, null, this.headers)
+  }
 }

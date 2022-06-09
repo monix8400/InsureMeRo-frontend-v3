@@ -1,3 +1,7 @@
+@import "./src/variables";
+
+$cardBorderColor: #363636;
+
 .row {
   justify-content: center;
 }
@@ -9,4 +13,19 @@ form {
 .icon{
   display: flex;
   justify-content: flex-end;
+  justify-items: center;
+  align-items: center;
+}
+
+mat-icon{
+  background-color: $Background;
+  border: 2px solid $cardBorderColor;
+  border-radius: 10px;
+  padding: 0.5rem;
+  height: unset;
+  width: unset;
+
+  &:hover, &.active {
+    border: 2px solid $Accent;
+  }
 }
