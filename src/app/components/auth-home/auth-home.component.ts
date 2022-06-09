@@ -14,6 +14,6 @@ export class AuthHomeComponent implements OnInit {
   }
 
   onClick(){
-    this.router.navigateByUrl('create-insurance-stepper').then(r => console.log(r));
+    this.router.navigateByUrl('create-insurance-stepper');
   }
 }

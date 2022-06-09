@@ -23,8 +23,6 @@ export class PersonalInfoDialogComponent implements OnInit {
   getPersonalInfoForCurrentUser() {
     this.personalInfoService.getPersonalInfoForCurrentUser(0).subscribe((data) => {
       this.personalInfoList = data;
-      console.log("indiv: ")
-      console.log(this.personalInfoList)
     });
   }
 

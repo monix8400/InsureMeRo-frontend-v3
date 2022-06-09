@@ -35,8 +35,8 @@ export class CreateInsuranceDComponent implements OnInit {
   }
 
   deleteAddDriver() {
-    let indexOfDriver = Array.from(this.itemRef.nativeElement.parentElement.parentElement.children).indexOf(this.itemRef.nativeElement.parentElement) //Array.from(this.itemRef.nativeElement.parentElement.children).indexOf(this.itemRef.nativeElement);
+    let indexOfDriver = Array.from(this.itemRef.nativeElement.parentElement.parentElement.children).indexOf(this.itemRef.nativeElement.parentElement)
     this.sendDriver.emit(indexOfDriver)
-    this.itemRef.nativeElement.parentElement.parentElement.removeChild(this.itemRef.nativeElement.parentElement) //am modificat in a sterge parentul
+    this.itemRef.nativeElement.parentElement.parentElement.removeChild(this.itemRef.nativeElement.parentElement)
   }
 }

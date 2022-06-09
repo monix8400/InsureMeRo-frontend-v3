@@ -20,9 +20,7 @@ export class InsuranceCardComponent implements OnInit, AfterViewInit {
 
     let expireDate = moment(this.insurance.insurance.validTo, "YYYY-MM-DD");
     let expireDateWithout30Days = expireDate.subtract(30, "days")
-    // console.log(expireDateWithout30Days.format("YYYY-MM-DD"))
     this.isExpired = expireDateWithout30Days.isBefore(moment())
-    // console.log(this.isExpired);
   }
 
   ngAfterViewInit() {
@@ -38,14 +36,12 @@ export class InsuranceCardComponent implements OnInit, AfterViewInit {
     console.log(insuranceId)
     this.insuranceService.getInsurancePdf(insuranceId).subscribe({
       next: (data)=>{
-        console.log(data)
         let file = new Blob([data], {type: 'application/pdf'})
         let fileURL = URL.createObjectURL(file);
 
         window.open(fileURL);
       },
-      error: (error) => {
-        console.log('getPDF error: ', error);
+      error: () => {
         this.snackBar.open("Something went wrong. We can't generate the PDF.", "close", {
           duration: 2000,
           panelClass: ['warn-snackBar']

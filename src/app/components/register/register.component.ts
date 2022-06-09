@@ -46,7 +46,6 @@ export class RegisterComponent implements OnInit {
 
     if (this.registerForm.valid) {
       if (this.registerForm.controls['password'].value == this.registerForm.controls['confirmPassword'].value) {
-        console.log(this.registerForm.value)
         this.user.firstname = this.registerForm.value['firstname']
         this.user.lastname = this.registerForm.value['lastname']
         this.user.email = this.registerForm.value['email']

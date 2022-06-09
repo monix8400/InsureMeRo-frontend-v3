@@ -13,6 +13,7 @@ export class SettingsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getUsers()
   }
 
   deleteAccount() {

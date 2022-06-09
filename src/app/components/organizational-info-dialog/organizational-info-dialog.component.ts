@@ -3,7 +3,7 @@ import {MatDialogRef} from "@angular/material/dialog";
 import {PersonalInfoService} from "../../services/personal-info.service";
 
 @Component({
-  selector: 'app-organizsational-info-dialog',
+  selector: 'app-organizational-info-dialog',
   templateUrl: './organizational-info-dialog.component.html',
   styleUrls: ['./organizational-info-dialog.component.scss']
 })
@@ -23,8 +23,6 @@ export class OrganizationalInfoDialogComponent implements OnInit {
   getPersonalInfoForCurrentUser() {
     this.personalInfoService.getPersonalInfoForCurrentUser(1).subscribe((data) => {
       this.organizationalInfoList = data;
-      console.log("org: ")
-      console.log(this.organizationalInfoList)
     });
   }
 

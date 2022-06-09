@@ -48,7 +48,6 @@ export class UserInfoComponent implements OnInit {
   saveNewLastname(value: string) {
     if (this.isEditableLastName) {
       this.lastname = value;
-      console.log(this.lastname)
       this.userService.updateUserLastname(this.lastname).subscribe()
       this.isEditableLastName = false;
     } else {
@@ -59,7 +58,6 @@ export class UserInfoComponent implements OnInit {
   saveNewFirstname(value: string) {
     if (this.isEditableFirstName) {
       this.firstname = value;
-      console.log(this.firstname)
       this.userService.updateUserFirstname(this.firstname).subscribe()
       this.isEditableFirstName = false;
     } else {
@@ -70,7 +68,6 @@ export class UserInfoComponent implements OnInit {
   saveNewEmail(value: string) {
     if (this.isEditableEmail) {
       this.email = value;
-      console.log(this.email);
       this.userService.updateUserEmail(this.email).subscribe()
       this.isEditableEmail = false;
     } else {

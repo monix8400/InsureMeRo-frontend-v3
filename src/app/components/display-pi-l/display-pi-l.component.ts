@@ -19,7 +19,6 @@ export class DisplayPiLComponent implements OnInit {
   getPersonalInfoForCurrentUser() {
     this.personalInfoService.getPersonalInfoForCurrentUser(1).subscribe((data) => {
       this.personalInfoList = data;
-      console.log(data)
     });
   }
 }

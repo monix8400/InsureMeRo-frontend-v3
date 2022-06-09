@@ -9,7 +9,6 @@ import {AccountLayoutComponent} from "./pages/account-layout/account-layout.comp
 import {DisplayInsurancesComponent} from "./components/display-insurances/display-insurances.component";
 import {UserInfoComponent} from "./components/user-info/user-info.component";
 import {SavedAccountInfoComponent} from "./components/saved-account-info/saved-account-info.component";
-import {SettingsComponent} from "./components/settings/settings.component";
 import {AuthGuard} from "./services/auth.guard";
 import {
   CreateInsuranceStepperComponent
@@ -66,7 +65,6 @@ const routes: Routes = [
             [
               {path: '', component: UserInfoComponent},
               {path: 'saved-account-info', component: SavedAccountInfoComponent},
-              // {path: 'settings', component: SettingsComponent}
             ]
         }
       ]

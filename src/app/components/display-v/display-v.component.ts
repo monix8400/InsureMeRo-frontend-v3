@@ -8,7 +8,6 @@ import {InsuranceService} from "../../services/insurance.service";
 })
 export class DisplayVComponent implements OnInit {
   insurances: [] = [];
-  vehicles: []=[];
 
   constructor(private insuranceService: InsuranceService) { }
 
