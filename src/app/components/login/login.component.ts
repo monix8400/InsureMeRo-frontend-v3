@@ -4,6 +4,7 @@ import {User} from "../../models/user";
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../../services/authentication.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {HTTPRequestService} from "../../services/http-request.service";
 
 @Component({
   selector: 'login',
@@ -38,6 +39,8 @@ export class LoginComponent implements OnInit {
       this.loginService.login(user.email, user.password).subscribe({
         next: (data) => {
           localStorage.setItem("accessToken", data.accessToken)
+          console.log(localStorage.getItem("accessToken"))
+          HTTPRequestService.updateToken()
           this.snackBar.open("Login succeeded!", "close", {
             duration: 2000,
             panelClass: ['primary-snackBar']

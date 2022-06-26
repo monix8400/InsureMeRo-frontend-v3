@@ -6,7 +6,8 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
   providedIn: 'root'
 })
 export class HTTPRequestService {
-  path: string = "http://localhost:8080/";
+  path: string = "http://54.93.113.113:8080/";
+  static headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem("accessToken")});
 
   constructor(private http: HttpClient) {
   }
@@ -20,7 +21,7 @@ export class HTTPRequestService {
    * @param responseType
    */
   public get(url: string, params?: any, headers?: HttpHeaders, responseType?: any): Observable<any> {
-    return this.invoke('GET', url, null, params, headers, responseType);
+    return this.invoke('GET', url, null, params, HTTPRequestService.headers, responseType);
   }
 
   /**
@@ -33,7 +34,7 @@ export class HTTPRequestService {
    * @param responseType
    */
   public put(url: string, data: any, params?: any, headers?: HttpHeaders, responseType?: any): Observable<any> {
-    return this.invoke('PUT', url, data, params, headers, responseType);
+    return this.invoke('PUT', url, data, params, HTTPRequestService.headers, responseType);
   }
 
   /**
@@ -46,7 +47,7 @@ export class HTTPRequestService {
    * @param responseType
    */
   public patch(url: string, data: any, params?: any, headers?: HttpHeaders, responseType?: any): Observable<any> {
-    return this.invoke('PATCH', url, data, params, headers, responseType);
+    return this.invoke('PATCH', url, data, params, HTTPRequestService.headers, responseType);
   }
 
   /**
@@ -59,7 +60,7 @@ export class HTTPRequestService {
    * @param responseType
    */
   public post(url: string, data: any, params?: any, headers?: HttpHeaders, responseType?: any): Observable<any> {
-    return this.invoke('POST', url, data, params, headers, responseType);
+    return this.invoke('POST', url, data, params, HTTPRequestService.headers, responseType);
   }
 
   /**
@@ -71,7 +72,11 @@ export class HTTPRequestService {
    * @param responseType
    */
   public delete(url: string, params?: any, headers?: HttpHeaders, responseType?: any): Observable<any> {
-    return this.invoke('DELETE', url, null, params, headers, responseType);
+    return this.invoke('DELETE', url, null, params, HTTPRequestService.headers, responseType);
+  }
+
+  public static updateToken() {
+    this.headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem("accessToken")});
   }
 
   private invoke(

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {Router} from "@angular/router";
 import {User} from "../../models/user";
+import {HTTPRequestService} from "../../services/http-request.service";
 
 @Component({
   selector: 'auth-layout',
@@ -49,6 +50,7 @@ export class AuthLayoutComponent implements OnInit {
 
   logout() {
     localStorage.clear();
+    HTTPRequestService.updateToken();
     this.router.navigate(['/login']).then(() => console.log('Logout succeeded!'))
   }
 }
