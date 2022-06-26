@@ -20,4 +20,4 @@ artifacts:
   files:
     - "*/"
   discard-paths: no
-  base-directory: dist/gradeapp
+  base-directory: dist/insure-me-ro-frontend-v3
