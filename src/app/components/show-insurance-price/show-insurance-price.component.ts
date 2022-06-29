@@ -15,7 +15,7 @@ export class ShowInsurancePriceComponent implements AfterViewInit {
 
   constructor(private insuranceService: InsuranceService, private route: ActivatedRoute, private snackBar: MatSnackBar) {
     this.currentInsuranceId = this.route.snapshot.paramMap.get('insurId');
-    this.url = "http://localhost:8080/insurance/getInsurancePdf/" + this.currentInsuranceId
+    this.url = "http://54.93.113.113:8080/insurance/getInsurancePdf/" + this.currentInsuranceId
     this.getInsuranceById(this.currentInsuranceId)
   }
 
